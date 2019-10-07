@@ -1,0 +1,20 @@
+{
+  "name": "house-of-influence",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve -s app",
+    "sass": "gulp sass:watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.2",
+    "node-notifier": "^5.0.2"
+  },
+  "dependencies": {}
+}
