@@ -1,0 +1,12 @@
+@import "_placeholders/placeholder.scss";
+
+body{
+	section{
+		outline: none;
+		position: relative;
+		color: $blue-00;
+		width: 100%;
+		height: 100%;
+		@extend %dfdgdf;
+	}
+}
