@@ -1,0 +1,515 @@
+section.discover_city {
+	padding: 176px 20px 99px;
+	background-repeat: no-repeat;
+	background-position: top;
+	-webkit-background-size: cover;
+	background-size: cover;
+	text-align: center;
+	h1 {
+		@include font(34px, 400, "AceSanss");
+		color: #ffffff;
+		letter-spacing: 15px;
+		padding: 0 140px;
+		margin-bottom: 38px;
+	}
+
+	h2 {
+		@include font(26px, 400);
+		color: #ffffff;
+		text-transform: uppercase;
+		padding: 0 180px;
+		margin-bottom: 38px;
+	}
+
+	h3 {
+		@include font(25px, 700, "Brandon");
+		color: #ffffff;
+		text-transform: uppercase;
+		margin-bottom: 38px;
+	}
+
+	.scroll_down {
+		@include font(14px, 400);
+		display: none;
+		margin-top: -18px;
+		color: #787878;
+		line-height: 100%;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+		transition: opacity 0.3s ease-in-out;
+		&:hover {
+			opacity: 0.8;
+		}
+		img {
+			margin-top: 10px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	.background_mobile img {
+		display: none;
+		margin-bottom: 25px;
+		transition: 0.1s;
+	}
+
+	form input {
+		max-width: 207px;
+		margin: 0 15px;
+	}
+
+	form button {
+		padding: 0 32px;
+		margin: 0 15px;
+	}
+}
+
+/*********************** menu_for_london *********************/
+section.menu_for_london {
+	padding: 50px 0 0;
+	h3.section-label {
+		margin-bottom: 40px;
+	}
+	p {
+		@include font(28px, 400);
+		text-align: center;
+		color: #000;
+		line-height: 100%;
+		padding: 0 39px;
+		margin-bottom: 65px;
+		a {
+			text-decoration: underline;
+			display: inline-block;
+			color: inherit;
+		}
+	}
+
+	.item {
+		position: relative;
+		width: calc(50% - 15px);
+		height: 580px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		padding: 35px;
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		&:first-child {
+			margin-right: 15px;
+		}
+
+		&:last-child {
+			margin-left: 15px;
+		}
+
+		h3 {
+			@include font(34px, 400, "AceSans");
+			color: #ffffff;
+			letter-spacing: 15px;
+			text-align: left;
+		}
+	}
+}
+
+/*********************** join_team *********************/
+
+section.join_team {
+	padding-top: 60px;
+	h3.section-label {
+		margin-bottom: 40px;
+	}
+	.content {
+		position: relative;
+		padding-top: 70px;
+		padding-bottom: 175px;
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		h2 {
+			@include font(45px, 400, "AceSans");
+			color: #ffffff;
+			line-height: 60px;
+			letter-spacing: 20px;
+			text-transform: uppercase;
+			margin-bottom: 90px;
+			padding: 0 100px;
+		}
+	}
+	form{
+		input {
+			max-width: 148px;
+			margin: 0 15px;
+		}
+		button {
+			padding: 0 23px;
+			margin: 0 15px;
+		}
+	}
+	span.border {
+		width: calc(100% - 32px);
+		height: calc(100% - 32px);
+	}
+}
+
+/**********************  londons_exclusive *****************************/
+section.londons_exclusive {
+	position: relative;
+	margin-top: 70px;
+	padding: 175px 30px 100px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	h3 {
+		@include font(34px, 400, "Brandon");
+		color: #ffffff;
+		margin-bottom: 45px;
+		text-transform: uppercase;
+		padding: 0 90px;
+		letter-spacing: 9px;
+	}
+	p {
+		@include font(28px, 400, "");
+		color: #ffffff;
+		line-height: 29px;
+		margin-bottom: 63px;
+		padding: 0 80px;
+		&.terms {
+			font-size: 26px;
+			margin-bottom: 0;
+			margin-top: 24px;
+		}
+		a {
+			display: inline-block;
+			text-decoration: underline;
+			color: inherit;
+		}
+	}
+	span.border {
+		width: calc(100% - 32px);
+		height: calc(100% - 32px);
+	}
+	form{
+		input {
+			max-width: 744px;
+			margin-right: 15px;
+		}
+		button {
+			padding: 0 105px;
+		}
+	}
+}
+
+/************************  tell_us *************************/
+section.tell_us {
+	padding-top: 70px;
+	h4 {
+		display: block;
+		width: 100%;
+		@include font(28px, 600);
+		color: #000;
+		margin-top: 45px;
+		text-align: center;
+		a {
+			color: inherit;
+			display: block;
+			text-decoration: underline;
+		}
+	}
+	.flex {
+		justify-content: space-between;
+	}
+	.item {
+		position: relative;
+		width: calc(50% - 15px);
+		height: 525px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		padding: 35px;
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		&:first-child {
+			justify-content: center;
+		}
+
+		&:last-of-type {
+			align-items: flex-end;
+			padding-bottom: 125px;
+		}
+		h3 {
+			@include font(34px, 400, "AceSans");
+			color: #ffffff;
+			letter-spacing: 15px;
+		}
+	}
+}
+
+/************************  launch_party *************************/
+section.launch_party {
+	padding-top: 60px;
+	h3.section-label {
+		margin-bottom: 40px;
+	}
+	.content {
+		position: relative;
+		padding-top: 195px;
+		padding-bottom: 50px;
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		h2 {
+			@include font(45px, 400, "AceSans");
+			color: #ffffff;
+			line-height: 60px;
+			letter-spacing: 20px;
+			text-transform: uppercase;
+			margin-bottom: 50px;
+			padding: 0 100px;
+		}
+		p {
+			@include font(28px, 400, "Garamond");
+			color: #ffffff;
+			line-height: 29px;
+			margin-bottom: 23px;
+			padding-left: 100px;
+			padding-right: 100px;
+			a {
+				text-decoration: none;
+				color: inherit;
+				display: inline-block;
+			}
+		}
+	}
+	form{
+		input {
+			max-width: 185px;
+			margin: 0 15px;
+			&.small {
+				max-width: 150px;
+			}
+		}
+		button {
+			padding: 0 23px;
+			margin-left: 87px;
+		}
+	}
+	img {
+		position: absolute;
+		right: -48px;
+		top: -63px;
+		max-width: 320px;
+	}
+	span.border {
+		top: 25px;
+		bottom: auto;
+		width: calc(100% - 50px);
+		height: calc(100% - 45px);
+		border-top: none;
+		border-right: none;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -1px;
+			height: 2px;
+			background-color: #fff;
+			width: 80%;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			bottom: -1px;
+			height: 64%;
+			background-color: #fff;
+			width: 1.5px;
+		}
+	}
+}
+
+/************************  follow_us *************************/
+section.follow_us {
+	padding-top: 65px;
+	h3.section-label {
+		margin-bottom: 60px;
+	}
+	.row.flex {
+		justify-content: space-between;
+	}
+	.item {
+		height: 165px;
+		width: 165px;
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	p {
+		@include font(28px, 400);
+		text-align: center;
+		color: #000;
+		line-height: 100%;
+		padding: 0 39px;
+		margin-top: 43px;
+		a {
+			display: inline-block;
+			color: inherit;
+			margin-left: 9px;
+			vertical-align: middle;
+		}
+	}
+	img {
+		max-width: 40px;
+	}
+}
+
+/************************* roll_with_us ***************************/
+section.roll_with_us {
+	position: relative;
+	margin-top: 65px;
+	padding-top: 150px;
+	padding-bottom: 48px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	h2 {
+		@include font(45px, 400, "AceSans");
+		color: #ffffff;
+		line-height: 60px;
+		letter-spacing: 20px;
+		text-transform: uppercase;
+		margin-bottom: 180px;
+		padding: 0 100px;
+	}
+	h3 {
+		@include font(25px, 700, "Brandon");
+		color: #ffffff;
+		text-transform: uppercase;
+		margin-bottom: 70px;
+	}
+	img {
+		position: absolute;
+		right: -48px;
+		top: -63px;
+		max-width: 320px;
+	}
+	form{
+		input, textarea{
+			max-width: 205px;
+			margin: 0 15px;
+		}
+		input{
+			&.medium {
+				max-width: 185px;
+			}
+			&.small {
+				max-width: 150px;
+			}
+		}
+		button {
+			padding: 0 20px;
+			margin-left: 67px;
+		}
+		.check_terms {
+			position: absolute;
+			bottom: 6px;
+			left: 0;
+			display: none;
+			align-items: center;
+			.checkbox {
+				position: relative;
+				overflow: hidden;
+				width: 28px;
+				height: 28px;
+				border: 2px solid #cccccc;
+				border-radius: 7px;
+				margin-right: 12px;
+				display: inline-block;
+				span.check {
+					width: calc(100% - 10px);
+					height: calc(100% - 10px);
+					position: absolute;
+					left: 0;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					margin: auto;
+					background: #cccccc;
+					opacity: 0;
+					pointer-events: none;
+					transition: opacity 0.2s ease-in-out;
+				}
+				input[type="checkbox"] {
+					position: absolute;
+					background-color: transparent;
+					border: none;
+					left: 0;
+					top: 0;
+					opacity: 0;
+					&:checked ~ span.check {
+						opacity: 1;
+					}
+				}
+			}
+
+			label {
+				text-align: left;
+				font-family: 'Garamond';
+				font-weight: 600;
+				color: #000;
+				font-size: 16px;
+				line-height: 100%;
+				a {
+					text-decoration: underline;
+					color: inherit;
+				}
+			}
+		}
+	}
+	span.border {
+		top: 25px;
+		bottom: auto;
+		width: calc(100% - 50px);
+		height: calc(100% - 45px);
+		border-top: none;
+		border-right: none;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -1px;
+			height: 2px;
+			background-color: #fff;
+			width: 80%;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			height: 64%;
+			background-color: #fff;
+			width: 1.5px;
+		}
+	}
+}
+
