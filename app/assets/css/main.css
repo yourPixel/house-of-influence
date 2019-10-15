@@ -69,6 +69,18 @@ body {
   overflow-x: hidden;
   position: relative;
   margin: 0;
+  background-color: #fff;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 100vh);
+  top: 100vh;
+  left: 0;
+  background-color: #fff;
+  z-index: 3;
 }
 
 body.opened_menu {
@@ -81,7 +93,7 @@ h1, h2, h3, h4, h5, p {
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
-  word-break: break-word;
+  word-break: initial;
 }
 
 * {
@@ -121,7 +133,7 @@ a:hover {
 
 .row {
   display: table;
-  width: 100%;
+  min-width: 100%;
 }
 
 .row.flex {
@@ -131,9 +143,85 @@ a:hover {
   display: -o-flex;
   display: flex;
   flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.justify-center {
+  align-items: center;
+  justify-content: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+.grid-margin {
+  margin-bottom: 25px;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.mt-1 {
+  margin-top: 10px;
+}
+
+.mb-1 {
+  margin-bottom: 10px;
+}
+
+.mt-2 {
+  margin-top: 20px;
+}
+
+.mb-2 {
+  margin-bottom: 20px;
+}
+
+.mt-3 {
+  margin-top: 30px;
+}
+
+.mb-3 {
+  margin-bottom: 30px;
+}
+
+.mt-4 {
+  margin-top: 40px;
+}
+
+.mb-4 {
+  margin-bottom: 40px;
+}
+
+.mt-5 {
+  margin-top: 50px;
+}
+
+.mb-5 {
+  margin-bottom: 50px;
+}
+
+[class^='col-'], .col {
+  width: 100%;
+  padding: 0 15px;
+}
+
+@media (min-width: 1025px) {
+  div.col-6 {
+    width: 50%;
+  }
 }
 
 .main-loader {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -207,7 +295,67 @@ form {
   align-items: center;
 }
 
-form input, form textarea {
+form .check_terms {
+  align-items: center;
+}
+
+form .check_terms .checkbox {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #cccccc;
+  border-radius: 7px;
+  margin-right: 12px;
+  display: inline-block;
+}
+
+form .check_terms .checkbox span.check {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background: #cccccc;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+form .check_terms .checkbox input[type="checkbox"] {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+form .check_terms .checkbox input[type="checkbox"]:checked ~ span.check {
+  opacity: 1;
+}
+
+form .check_terms label {
+  text-align: left;
+  font-family: 'Garamond';
+  font-weight: 600;
+  color: #000;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+form .check_terms label a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+form input, form textarea, form select {
   font-size: 18px;
   font-weight: 400;
   font-family: "Garamond";
@@ -225,6 +373,46 @@ form input, form textarea {
   -webkit-appearance: none;
 }
 
+form input.grey, form textarea.grey, form select.grey {
+  border: 1px solid #919191;
+}
+
+form input.grey:hover, form textarea.grey:hover, form select.grey:hover {
+  border-color: #151515;
+}
+
+form input:hover ~ span.arrow, form textarea:hover ~ span.arrow, form select:hover ~ span.arrow {
+  opacity: 0.8;
+}
+
+form input::-webkit-input-placeholder, form input::-moz-placeholder, form input:-ms-input-placeholder, form input:-moz-placeholder, form textarea::-webkit-input-placeholder, form textarea::-moz-placeholder, form textarea:-ms-input-placeholder, form textarea:-moz-placeholder, form select::-webkit-input-placeholder, form select::-moz-placeholder, form select:-ms-input-placeholder, form select:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.63);
+}
+
+form input::placeholder, form textarea::placeholder, form select::placeholder {
+  color: rgba(0, 0, 0, 0.63);
+}
+
+form label.select-options {
+  position: relative;
+}
+
+form label.select-options span.arrow {
+  position: absolute;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-image: url(/assets/img/arrow_down.png);
+  width: 12px;
+  height: 9px;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 form textarea {
   padding-top: 3px;
 }
@@ -236,10 +424,6 @@ form input.small {
 
 form input:hover {
   border-color: #fff;
-}
-
-form input::placeholder, form textarea::placeholder {
-  color: rgba(0, 0, 0, 0.63);
 }
 
 form button {
@@ -256,6 +440,12 @@ form button {
   cursor: pointer;
   box-shadow: none;
   transition: opacity 0.2s ease-in-out;
+}
+
+form button.grey {
+  border: 2px solid #919191;
+  background-color: #e0e0e0;
+  line-height: 100%;
 }
 
 form button:hover {
@@ -285,6 +475,30 @@ h3.section-label {
   letter-spacing: 14px;
   text-align: center;
   text-transform: uppercase;
+}
+
+p.section-description {
+  font-size: 28px;
+  font-weight: 400;
+  font-family: "Garamond";
+  text-align: center;
+  color: #000;
+  line-height: 100%;
+  padding: 0 39px;
+}
+
+p.section-description a {
+  text-decoration: underline;
+  display: inline-block;
+  color: inherit;
+}
+
+h5.item-label {
+  font-size: 34px;
+  font-weight: 400;
+  font-family: "AceSans";
+  color: #ffffff;
+  letter-spacing: 12px;
 }
 
 .background_mobile {
@@ -539,7 +753,51 @@ header nav ul.main_menu li.menu_item.dropdown ul.dopdown_menu li a {
 }
 
 section {
+  position: relative;
   overflow: hidden;
+  z-index: 3;
+  background-color: #fff;
+}
+
+section .feature-block {
+  position: relative;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  z-index: 2;
+  cursor: pointer;
+}
+
+section .feature-block::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+section .feature-block:hover::before {
+  opacity: 1;
+}
+
+section .feature-block h5.item-label {
+  text-transform: uppercase;
+  text-align: center;
 }
 
 section.discover_city {
@@ -554,7 +812,7 @@ section.discover_city {
 section.discover_city h1 {
   font-size: 34px;
   font-weight: 400;
-  font-family: "AceSanss";
+  font-family: "AceSans";
   color: #ffffff;
   letter-spacing: 15px;
   padding: 0 140px;
@@ -623,33 +881,20 @@ section.discover_city form button {
 
 /*********************** menu_for_london *********************/
 section.menu_for_london {
-  padding: 50px 0 0;
+  padding: 40px 0 0;
 }
 
 section.menu_for_london h3.section-label {
   margin-bottom: 40px;
 }
 
-section.menu_for_london p {
-  font-size: 28px;
-  font-weight: 400;
-  font-family: "Garamond";
-  text-align: center;
-  color: #000;
-  line-height: 100%;
-  padding: 0 39px;
+section.menu_for_london p.section-description {
   margin-bottom: 65px;
-}
-
-section.menu_for_london p a {
-  text-decoration: underline;
-  display: inline-block;
-  color: inherit;
 }
 
 section.menu_for_london .item {
   position: relative;
-  width: calc(50% - 15px);
+  width: 100%;
   height: 580px;
   display: -webkit-flex;
   display: -moz-flex;
@@ -664,14 +909,6 @@ section.menu_for_london .item {
   background-repeat: no-repeat;
 }
 
-section.menu_for_london .item:first-child {
-  margin-right: 15px;
-}
-
-section.menu_for_london .item:last-child {
-  margin-left: 15px;
-}
-
 section.menu_for_london .item h3 {
   font-size: 34px;
   font-weight: 400;
@@ -683,7 +920,7 @@ section.menu_for_london .item h3 {
 
 /*********************** join_team *********************/
 section.join_team {
-  padding-top: 60px;
+  padding-top: 35px;
 }
 
 section.join_team h3.section-label {
@@ -814,7 +1051,6 @@ section.tell_us .flex {
 
 section.tell_us .item {
   position: relative;
-  width: calc(50% - 15px);
   height: 525px;
   display: -webkit-flex;
   display: -moz-flex;
@@ -955,6 +1191,7 @@ section.follow_us h3.section-label {
 
 section.follow_us .row.flex {
   justify-content: space-between;
+  margin: 0;
 }
 
 section.follow_us .item {
@@ -1052,60 +1289,6 @@ section.roll_with_us form .check_terms {
   bottom: 6px;
   left: 0;
   display: none;
-  align-items: center;
-}
-
-section.roll_with_us form .check_terms .checkbox {
-  position: relative;
-  overflow: hidden;
-  width: 28px;
-  height: 28px;
-  border: 2px solid #cccccc;
-  border-radius: 7px;
-  margin-right: 12px;
-  display: inline-block;
-}
-
-section.roll_with_us form .check_terms .checkbox span.check {
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  background: #cccccc;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease-in-out;
-}
-
-section.roll_with_us form .check_terms .checkbox input[type="checkbox"] {
-  position: absolute;
-  background-color: transparent;
-  border: none;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-
-section.roll_with_us form .check_terms .checkbox input[type="checkbox"]:checked ~ span.check {
-  opacity: 1;
-}
-
-section.roll_with_us form .check_terms label {
-  text-align: left;
-  font-family: 'Garamond';
-  font-weight: 600;
-  color: #000;
-  font-size: 16px;
-  line-height: 100%;
-}
-
-section.roll_with_us form .check_terms label a {
-  text-decoration: underline;
-  color: inherit;
 }
 
 section.roll_with_us span.border {
@@ -1137,6 +1320,436 @@ section.roll_with_us span.border::after {
   width: 1.5px;
 }
 
+section.about-us-main-section {
+  padding: 0 0 175px 200px;
+  position: relative;
+  min-height: 480px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+section.about-us-main-section h3 {
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Brandon";
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+section.about-us-main-section img {
+  position: absolute;
+  right: 75px;
+  bottom: -115px;
+  width: 514px;
+}
+
+section.lux_lovers {
+  padding: 40px 0 0;
+}
+
+section.lux_lovers h3.section-label {
+  margin-bottom: 40px;
+}
+
+section.lux_lovers p.section-description {
+  margin-bottom: 40px;
+}
+
+section.lux_lovers h4 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Brandon";
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+section.lux_lovers .feature-block {
+  width: 100%;
+  min-height: 175px;
+  margin-bottom: 30px;
+}
+
+section.influental-people {
+  padding-top: 70px;
+}
+
+section.influental-people h3.section-label {
+  text-align: left;
+  margin-bottom: 43px;
+}
+
+section.influental-people p.section-description {
+  text-align: left;
+  padding: 0;
+  padding-right: 50px;
+}
+
+section.influental-people .item {
+  position: relative;
+  height: 100%;
+  min-height: 525px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 60px 37px;
+}
+
+section.influental-people .item h3 {
+  font-size: 45px;
+  font-weight: 400;
+  font-family: "AceSans";
+  color: #ffffff;
+  line-height: 60px;
+  letter-spacing: 20px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1024px) {
+  section.about-us-main-section {
+    padding: 200px 0 300px 0;
+    align-items: center;
+    justify-content: center;
+  }
+  section.about-us-main-section .background_mobile {
+    background-size: 0;
+  }
+  section.about-us-main-section img {
+    right: -40px;
+    bottom: -50px;
+    width: 250px;
+  }
+  section.influental-people .row {
+    flex-direction: column-reverse;
+  }
+  section.influental-people h3.section-label {
+    margin-bottom: 30px;
+  }
+  section.influental-people p.section-description {
+    padding: 0;
+  }
+  section.influental-people .col-6:last-child {
+    margin-bottom: 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  section h5.item-label {
+    font-size: 20px;
+    letter-spacing: 9px;
+  }
+  section.about-us-main-section {
+    padding: 0;
+    background-size: 0;
+    height: 100vh;
+    z-index: 2;
+  }
+  section.about-us-main-section .background_mobile {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: initial;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding: 210px 15px 150px;
+    height: 100vh;
+  }
+  section.about-us-main-section h3 {
+    position: relative;
+    text-align: center;
+    font-size: 17px;
+    display: inline-block;
+  }
+  section.about-us-main-section img {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    right: 0;
+    margin-left: 20px;
+    bottom: 45px;
+  }
+  section.lux_lovers {
+    padding: 40px 15px 0;
+  }
+  section.lux_lovers h3.section-label {
+    margin-bottom: 30px;
+  }
+  section.lux_lovers p.section-description {
+    margin-bottom: 30px;
+  }
+  section.lux_lovers h4 {
+    font-size: 17px;
+    margin-bottom: 35px;
+  }
+  section.lux_lovers .feature-block {
+    min-height: 110px;
+    margin-bottom: 15px;
+  }
+  section.influental-people {
+    padding: 50px 15px 0;
+  }
+  section.influental-people h3.section-label {
+    margin-bottom: 30px;
+  }
+  section.influental-people .item {
+    min-height: 430px;
+  }
+  section.influental-people .item h3 {
+    font-size: 28px;
+    letter-spacing: 10px;
+    line-height: 40px;
+  }
+}
+
+.about-us-page section.londons_exclusive {
+  margin-top: 40px;
+}
+
+section.creatives-main-section {
+  min-height: 530px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.creatives-main-section h2 {
+  font-size: 25px;
+  font-weight: 400;
+  font-family: "AceSans";
+  color: #fff;
+  text-align: center;
+  letter-spacing: 10px;
+  padding: 0 40px;
+}
+
+section.creatives-reg {
+  padding: 45px 0 0;
+}
+
+section.creatives-reg .m-top {
+  margin-top: 50px;
+}
+
+section.creatives-reg h3.section-label {
+  margin-bottom: 45px;
+}
+
+section.creatives-reg h4 {
+  font-size: 23px;
+  font-weight: 400;
+  font-family: "Garamond";
+  color: #151515;
+  text-align: center;
+  line-height: normal;
+  margin-top: 2px;
+}
+
+section.creatives-reg p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Garamond";
+  color: #151515;
+  opacity: 0.63;
+  text-align: center;
+  line-height: 23px;
+  margin-bottom: 30px;
+}
+
+section.creatives-reg form {
+  display: block;
+}
+
+section.creatives-reg form input {
+  margin-bottom: 20px;
+}
+
+section.creatives-reg form button {
+  padding: 0 18px;
+  margin-left: 20px;
+  margin-top: 25px;
+}
+
+section.creatives-reg form .check_terms {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  margin-top: 25px;
+}
+
+section.creatives-reg form .check_terms label {
+  font-size: 20px;
+}
+
+section.creatives-reg .feature-block {
+  width: 100%;
+  min-height: 245px;
+}
+
+section.creatives-reg .col.xs {
+  width: 19%;
+}
+
+section.creatives-reg .col.sm {
+  width: 36%;
+}
+
+section.creatives-reg .col.md {
+  width: 64%;
+}
+
+section.creatives-reg .col.lg {
+  width: 81%;
+}
+
+@media only screen and (max-width: 1024px) {
+  section.creatives-main-section {
+    padding: 185px 0 150px 0;
+    align-items: center;
+    justify-content: center;
+  }
+  section.creatives-main-section .background_mobile {
+    background-size: 0;
+  }
+  section.creatives-main-section h2 {
+    padding: 0 20px;
+  }
+  section.creatives-reg {
+    padding-top: 38px;
+  }
+  section.creatives-reg h3.section-label {
+    margin-bottom: 30px;
+  }
+  section.creatives-reg h4 {
+    margin-top: 10px;
+  }
+  section.creatives-reg p {
+    margin-bottom: 25px;
+  }
+  section.creatives-reg form input, section.creatives-reg form label.select-options {
+    margin-bottom: 15px;
+    display: block;
+  }
+  section.creatives-reg form button {
+    margin-top: 0;
+  }
+  section.creatives-reg form .check_terms {
+    margin-top: 0;
+  }
+  section.creatives-reg form .check_terms label {
+    font-size: 16px;
+  }
+  section.creatives-reg form .check_terms label a:first-of-type {
+    display: block;
+  }
+  section.creatives-reg form .check_terms label span {
+    display: none;
+  }
+  section.creatives-reg .m-top {
+    margin-top: 35px;
+  }
+  section.creatives-reg .col.justify-center {
+    justify-content: space-between;
+  }
+  section.creatives-reg .col.xs, section.creatives-reg .col.sm, section.creatives-reg .col.md, section.creatives-reg .col.lg {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  section h5.item-label {
+    font-size: 20px;
+    letter-spacing: 9px;
+  }
+  section.creatives-main-section {
+    padding: 0;
+    background-size: 0;
+    height: 100vh;
+    z-index: 2;
+  }
+  section.creatives-main-section .background_mobile {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding: 185px 15px 150px;
+    height: 100vh;
+  }
+  section.creatives-main-section h2 {
+    font-size: 20px;
+  }
+  section.creatives-reg {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  section.creatives-reg .feature-block {
+    min-height: 150px;
+  }
+  section.influental-people {
+    padding: 50px 15px 0;
+  }
+  section.influental-people h3.section-label {
+    margin-bottom: 30px;
+  }
+  section.influental-people .item {
+    min-height: 430px;
+  }
+  section.influental-people .item h3 {
+    font-size: 28px;
+    letter-spacing: 10px;
+    line-height: 40px;
+  }
+}
+
 footer {
   position: relative;
   margin-top: 100px;
@@ -1149,6 +1762,7 @@ footer {
   display: -o-flex;
   display: flex;
   justify-content: space-between;
+  z-index: 3;
 }
 
 footer .contact_info {
@@ -1387,14 +2001,6 @@ footer .contact_info form button {
   section.menu_for_london .item {
     height: 540px;
     width: 100%;
-    margin: 0 0 25px;
-  }
-  section.menu_for_london .item:first-child, section.menu_for_london .item:last-child {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  section.menu_for_london .item:last-child {
-    margin-bottom: 0;
   }
   section.menu_for_london .item h3 {
     font-size: 28px;
@@ -1488,7 +2094,7 @@ footer .contact_info form button {
   section.tell_us .item {
     width: 100%;
   }
-  section.tell_us .item:last-of-type {
+  section.tell_us .col-6:last-of-type {
     order: 2;
   }
   section.tell_us h4 {
@@ -1662,6 +2268,10 @@ footer .contact_info form button {
     font-size: 28px;
     letter-spacing: 5px;
   }
+  p.section-description {
+    font-size: 20px;
+    padding: 0;
+  }
   header {
     position: fixed;
     padding: 7px 15px;
@@ -1767,7 +2377,6 @@ footer .contact_info form button {
     justify-content: center;
     min-height: 435px;
     max-height: 100vh;
-    transition: margin-top 0.2s ease;
   }
   section.discover_city .background_mobile img {
     display: block;
@@ -1799,9 +2408,7 @@ footer .contact_info form button {
   section.menu_for_london h3.section-label {
     margin-bottom: 25px;
   }
-  section.menu_for_london p {
-    font-size: 20px;
-    padding: 0;
+  section.menu_for_london p.section-description {
     margin-bottom: 35px;
   }
   section.menu_for_london .item {

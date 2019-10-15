@@ -3,3 +3,9 @@
 	font-weight: $font-weight;
 	font-family: $font-family;
 }
+@mixin bg($bgp, $bgz: cover){
+	background-repeat: no-repeat;
+	background-position: $bgp;
+	-webkit-background-size: $bgz;
+	background-size: $bgz;
+}

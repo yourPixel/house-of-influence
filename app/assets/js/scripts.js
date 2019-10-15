@@ -1,4 +1,6 @@
-$("documet").ready(function() {
+$("document").ready(function() {
+	
+	$('#header').load('../../partials/header.html')
 
 	$('a[href*="#"]')
 	.not('[href="#"]')
@@ -15,79 +17,47 @@ $("documet").ready(function() {
 	});
 
 		// preloader
-		$(".main-loader .line").addClass("max-width");
-		setTimeout(function () {
-
-			$(".main-loader .line").addClass("max-height");
-			setTimeout(function () {
-
-				$(".main-loader .load-img").addClass("visible");
-				setTimeout(function () {
-
-					$(".main-loader").delay(1350).addClass('loaded');
-
-				}, 500);
-			}, 800);
-		}, 700);
-
-		$('.open_menu_btn').click(function(){
-			if ($('nav').hasClass('opened_menu')) {
-				$('nav, body').removeClass('opened_menu');
-				$(this).removeClass('opened_btn');
-			}else{
-				$('nav, body').addClass('opened_menu');
-				$(this).addClass('opened_btn');
-			}
-		})
-
-		$('.open_dropdown').click(function(){
-			if ($(this).hasClass('opened')) {
-				$(this).removeClass('opened');
-			}else{
-				$(this).addClass('opened');
-			}
-		})
-
-
+		// $(".main-loader .line").addClass("max-width");
+		// setTimeout(function () {
+		//
+		// 	$(".main-loader .line").addClass("max-height");
+		// 	setTimeout(function () {
+		//
+		// 		$(".main-loader .load-img").addClass("visible");
+		// 		setTimeout(function () {
+		//
+		// 			$(".main-loader").delay(1350).addClass('loaded');
+		//
+		// 		}, 500);
+		// 	}, 800);
+		// }, 700);
+	
 		$(window).scroll(function(e){
 			var body = e.target.body, scrollT = $(this).scrollTop();
-			if (body.clientWidth < 600) {
-				if (scrollT > 65) {
-					$('.header_bg').css({
-						'top': "0",
-						'opacity': '1'
-					});
-					$('.open_menu_btn').addClass('grey');
-				}else{
-					$('.header_bg').css({
-						'top': `-65px`,
-					});
-					$('.open_menu_btn').removeClass('grey');
-				}
-			}
-			
-
+			var maxScrollTop = body.dataset.scroll ? body.dataset.scroll : 140;
 			if (body.clientWidth < 425 && window.innerHeight > 450 ) {
-				if (scrollT < 140) {
+				if (scrollT < maxScrollTop) {
 					if (scrollT > 65) {
 						background_mobile( scrollT === 0 ? "" : `${scrollT}px`, `calc(100vh - ${scrollT}px`, `center ${scrollT}px`)
 					}else{
 						background_mobile(scrollT === 0 ? "" : `${scrollT}px`, `calc(100vh - ${scrollT}px`, `center ${scrollT}px`)
 					}
 				}else{
-					background_mobile('140px', 'calc(100vh - 140px)', 'center 140px')
+					background_mobile(`${maxScrollTop}px`, `calc(100vh - ${maxScrollTop}px)`, `center ${maxScrollTop}px`)
 				}
 			}else{
 				background_mobile('', '', '')
 			}
 		});
-
-
+		
 		function background_mobile( pt, height, bgp) {
-			$('.discover_city .background_mobile').css({
+			$('.animated.background_mobile').css({
 				'padding-top': pt,
 				'height': height,
 				'background-position': bgp
+			});
+			$('.fixed-content.background_mobile').css({
+				'height': height,
 			});
 		}
 

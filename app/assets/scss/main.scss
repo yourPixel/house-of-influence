@@ -16,6 +16,17 @@ body {
 	overflow-x: hidden;
 	position: relative;
 	margin: 0;
+	background-color: #fff;
+	&::before{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: calc(100% - 100vh);
+		top: 100vh;
+		left: 0;
+		background-color: #fff;
+		z-index: 3;
+	}
 }
 
 body.opened_menu {
@@ -28,7 +39,7 @@ h1, h2, h3, h4, h5, p {
 	margin-block-end: 0;
 	margin-inline-start: 0;
 	margin-inline-end: 0;
-	word-break: break-word;
+	word-break: initial;
 }
 
 * {
@@ -68,7 +79,7 @@ a:hover {
 
 .row {
 	display: table;
-	width: 100%;
+	min-width: 100%;
 }
 
 .row.flex {
@@ -78,9 +89,54 @@ a:hover {
 	display: -o-flex;
 	display: flex;
 	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.justify-center{
+	align-items: center;
+	justify-content: center;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.grid-margin{
+	margin-bottom: 25px;
+}
+
+.no-margin{
+	margin: 0!important;
+}
+
+.no-padding{
+	padding: 0!important;
+}
+
+@for $i from 1 through 5 {
+	.mt-#{$i} {
+		margin-top: $i * 10px;
+	}
+	.mb-#{$i}{
+		margin-bottom: $i * 10px;
+	}
+}
+
+[class^='col-'], .col{
+	width: 100%;
+	padding: 0 15px;
+}
+
+@media (min-width: 1025px){
+	div.col-6{
+		width: 50%;
+	}
 }
 
 .main-loader {
+	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -152,9 +208,62 @@ form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	.check_terms {
+		align-items: center;
+		.checkbox {
+			position: relative;
+			width: 28px;
+			height: 28px;
+			border: 2px solid #cccccc;
+			border-radius: 7px;
+			margin-right: 12px;
+			display: inline-block;
+			span.check {
+				width: calc(100% - 10px);
+				height: calc(100% - 10px);
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				margin: auto;
+				background: #cccccc;
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.2s ease-in-out;
+			}
+			input[type="checkbox"] {
+				position: absolute;
+				background-color: transparent;
+				border: none;
+				left: 0;
+				top: 0;
+				opacity: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				margin: auto;
+				&:checked ~ span.check {
+					opacity: 1;
+				}
+			}
+		}
+		label {
+			text-align: left;
+			font-family: 'Garamond';
+			font-weight: 600;
+			color: #000;
+			font-size: 16px;
+			line-height: 100%;
+			a {
+				text-decoration: underline;
+				color: inherit;
+			}
+		}
+	}
 }
 
-form input, form textarea {
+form input, form textarea, form select {
 	@include font(18px, 400, "Garamond");
 	width: 100%;
 	height: 32px;
@@ -168,6 +277,40 @@ form input, form textarea {
 	transition: border-color 0.2s ease-in-out;
 	resize: none;
 	-webkit-appearance: none;
+	&.grey{
+		border: 1px solid #919191;
+		&:hover {
+			border-color: #151515;
+		}
+	}
+	&:hover {
+		& ~ span.arrow{
+			opacity: 0.8;
+		}
+	}
+
+	&::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder {
+		color: rgba(0, 0, 0, 0.63);
+	}
+	&::placeholder{
+		color: rgba(0, 0, 0, 0.63);
+	}
+}
+
+form label.select-options{
+	position: relative;
+	span.arrow{
+		position: absolute;
+		pointer-events: none;
+		@include bg(center, contain);
+		background-image: url(/assets/img/arrow_down.png);
+		width: 12px;
+		height: 9px;
+		right: 10px;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+	}
 }
 
 form textarea {
@@ -183,9 +326,6 @@ form input:hover {
 	border-color: #fff;
 }
 
-form input::placeholder, form textarea::placeholder {
-	color: rgba(0, 0, 0, 0.63);
-}
 
 form button {
 	height: 32px;
@@ -199,6 +339,12 @@ form button {
 	cursor: pointer;
 	box-shadow: none;
 	transition: opacity 0.2s ease-in-out;
+
+	&.grey{
+		border: 2px solid #919191;
+		background-color: #e0e0e0;
+		line-height: 100%;
+	}
 }
 
 form button:hover {
@@ -226,6 +372,24 @@ h3.section-label {
 	letter-spacing: 14px;
 	text-align: center;
 	text-transform: uppercase;
+}
+p.section-description {
+	@include font(28px, 400);
+	text-align: center;
+	color: #000;
+	line-height: 100%;
+	padding: 0 39px;
+	a {
+		text-decoration: underline;
+		display: inline-block;
+		color: inherit;
+	}
+}
+
+h5.item-label{
+	@include font(34px, 400, "AceSans");
+	color: #ffffff;
+	letter-spacing: 12px;
 }
 
 .background_mobile {
@@ -470,11 +634,54 @@ header nav ul.main_menu li.menu_item.dropdown ul.dopdown_menu li a {
 }
 
 section {
+	position: relative;
 	overflow: hidden;
+	z-index: 3;
+	background-color: #fff;
+
+	.feature-block{
+		position: relative;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		padding: 20px;
+		align-items: center;
+		justify-content: center;
+		@include bg(center);
+		z-index: 2;
+		cursor: pointer;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			background-color: rgba(0,0,0,0.35);
+			z-index: -1;
+			pointer-events: none;
+			transition: opacity 0.2s ease-in-out;
+		}
+		&:hover{
+			&::before{
+				opacity: 1;
+			}
+		}
+		h5.item-label{
+			text-transform: uppercase;
+			text-align: center;
+		}
+	}
 }
 
 //********************************** PAGES *************************************
 @import "pages/home";
+@import "pages/about_us";
+@import "pages/creatives";
+
 
 
 footer {
@@ -489,87 +696,86 @@ footer {
 	display: -o-flex;
 	display: flex;
 	justify-content: space-between;
-}
+	z-index: 3;
+	.contact_info {
+		width: calc(50% - 15px);
+		span.title {
+			@include font(21px, 600, "Garamond");
+			color: #fff;
+			text-transform: uppercase;
+		}
 
-footer .contact_info {
-	width: calc(50% - 15px);
-}
+		p {
+			@include font(21px, 400, "Garamond");
+			color: rgba(255, 255, 255, 0.75);
+			line-height: 25px;
+			margin-bottom: 3px;
+		}
 
-footer .contact_info span.title {
-	@include font(21px, 600, "Garamond");
-	color: #fff;
-	text-transform: uppercase;
-}
+		p a {
+			color: inherit;
+			text-decoration: underline;
+		}
 
-footer .contact_info p {
-	@include font(21px, 400, "Garamond");
-	color: rgba(255, 255, 255, 0.75);
-	line-height: 25px;
-	margin-bottom: 3px;
-}
+		.socials a {
+			display: inline-block;
+			margin-right: 12px;
+			margin-bottom: 3px;
+		}
 
-footer .contact_info p a {
-	color: inherit;
-	text-decoration: underline;
-}
+		.space {
+			margin-top: 15px;
+		}
 
-footer .contact_info .socials a {
-	display: inline-block;
-	margin-right: 12px;
-	margin-bottom: 3px;
-}
+		.payment_method {
+			display: inline-block;
+		}
 
-footer .contact_info .space {
-	margin-top: 15px;
-}
+		img.payment {
+			max-width: 40px;
+			margin-right: 12px;
+			vertical-align: sub;
+		}
 
-footer .contact_info .payment_method {
-	display: inline-block;
-}
+		img[alt="drinkaware-logo"] {
+		}
 
-footer .contact_info img.payment {
-	max-width: 40px;
-	margin-right: 12px;
-	vertical-align: sub;
-}
+		a.work-with-us {
+			margin-right: 13px;
+		}
 
-footer .contact_info img[alt="drinkaware-logo"] {
-}
+		form {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			justify-content: flex-start;
+			margin-top: 18px;
+		}
 
-footer .contact_info a.work-with-us {
-	margin-right: 13px;
-}
+		form input {
+			max-width: 380px;
+			width: 100%;
+			height: 40px;
+			padding: 0 15px;
+			border: 2px solid #fff;
+			border-radius: 7px;
+			margin-right: 5px;
+		}
 
-footer .contact_info form {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: flex-start;
-	margin-top: 18px;
-}
-
-footer .contact_info form input {
-	max-width: 380px;
-	width: 100%;
-	height: 40px;
-	padding: 0 15px;
-	border: 2px solid #fff;
-	border-radius: 7px;
-	margin-right: 5px;
-}
-
-footer .contact_info form button {
-	height: 40px;
-	max-width: 139px;
-	line-height: 40px;
-	background-color: #fff;
-	padding: 0 16px;
-	@include font(19px, 600);
-	color: #000;
-	letter-spacing: 6px;
-	text-transform: uppercase;
+		form button {
+			height: 40px;
+			max-width: 139px;
+			line-height: 40px;
+			background-color: #fff;
+			padding: 0 16px;
+			@include font(19px, 600);
+			color: #000;
+			letter-spacing: 6px;
+			text-transform: uppercase;
+		}
+	}
 }
 
 @import "utils/media";

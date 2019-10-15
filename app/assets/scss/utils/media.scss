@@ -189,16 +189,6 @@
 	section.menu_for_london .item {
 		height: 540px;
 		width: 100%;
-		margin: 0 0 25px;
-	}
-
-	section.menu_for_london .item:first-child, section.menu_for_london .item:last-child {
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-	section.menu_for_london .item:last-child {
-		margin-bottom: 0;
 	}
 
 	section.menu_for_london .item h3 {
@@ -313,7 +303,7 @@
 		width: 100%;
 	}
 
-	section.tell_us .item:last-of-type {
+	section.tell_us .col-6:last-of-type {
 		order: 2;
 	}
 
@@ -527,6 +517,10 @@
 		font-size: 28px;
 		letter-spacing: 5px;
 	}
+	p.section-description {
+		font-size: 20px;
+		padding: 0;
+	}
 
 	header {
 		position: fixed;
@@ -650,7 +644,6 @@
 		justify-content: center;
 		min-height: 435px;
 		max-height: 100vh;
-		transition: margin-top 0.2s ease;
 	}
 
 	section.discover_city .background_mobile img {
@@ -688,9 +681,7 @@
 		margin-bottom: 25px;
 	}
 
-	section.menu_for_london p {
-		font-size: 20px;
-		padding: 0;
+	section.menu_for_london p.section-description {
 		margin-bottom: 35px;
 	}
 
