@@ -91,6 +91,17 @@ section {
 	}
 }
 
+@media only screen and (max-width:1230px){
+	section{
+		&.about-us-main-section{
+			padding: 0 0 175px 100px;
+			img {
+				width: 414px;
+			}
+		}
+	}
+}
+
 @media only screen and (max-width: 1024px) {
 	section {
 		&.about-us-main-section {
@@ -156,7 +167,7 @@ section {
 				justify-content: center;
 				z-index: -1;
 				@include bg(initial);
-				padding: 210px 15px 150px;
+				padding: 210px 8px 150px;
 				height: 100vh;
 			}
 			h3 {

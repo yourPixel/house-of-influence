@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>HOI | Influencers registration</title>
+	<link rel="stylesheet" href="../assets/css/main.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body class="influencers-page" data-scroll="300">
+<div class="main-loader">
+	<div class="line"></div>
+	<div class="load-img"></div>
+</div>
+<header id="header"></header>
+<div class="container">
+	<main>
+		<section class="influencers-main-section" style="background-image: url('/assets/img/creatives/bg.png');">
+			<!-- this background for mobile version -->
+			<div class="background_mobile fixed-content" style="background-image: url('/assets/img/creatives/bg-mobile.png');">
+				<h2>creatives</h2>
+			</div>
+		</section>
+		
+		<section class="influencers-reg-form">
+			<h3 class="section-label">creatives registration</h3>
+			<form action="" class="collect-info-form">
+				<div class="row flex">
+					<div class="col-6"><input class="grey" type="text" placeholder="*Name" name="" required/></div>
+					<div class="col-6"><input class="grey" type="text" placeholder="*Surname" name="" required/></div>
+					<div class="col-6"><input class="grey" type="text" placeholder="Instagram Handle" name="" /></div>
+					<div class="col-6"><input class="grey" type="email" placeholder="*Email" name="" required/></div>
+				</div>
+				
+				<h4>*I am interested in...</h4>
+				<p>please select up to 3 collaboration options</p>
+				
+				<div class="grid">
+					<div class="grid-sizer"></div>
+					
+					<div class="grid-item h_250">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-1.png');">1</div>
+					</div>
+					<div class="grid-item h_250">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-2.png');">2</div>
+					</div>
+					<div class="grid-item h_480">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-3.png');">3</div>
+					</div>
+					
+					
+					<div class="grid-item h_460">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-4.png');">4</div>
+					</div>
+					<div class="grid-item h_250">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-5.png');">5</div>
+					</div>
+					<div class="grid-item h_280">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-6.png');">6</div>
+					</div>
+					
+					
+					<div class="grid-item h_300">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-7.png');">7</div>
+					</div>
+					<div class="grid-item h_230">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-8.png');">8</div>
+					</div>
+					<div class="grid-item h_290">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-9.png');">9</div>
+					</div>
+					
+					
+					<div class="grid-item h_250">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-10.png');">10</div>
+					</div>
+					<div class="grid-item h_480">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-11.png');">11</div>
+					</div>
+					<div class="grid-item h_580">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-12.png');">12</div>
+					</div>
+					
+					
+					<div class="grid-item h_270">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-13.png');">13</div>
+					</div>
+					<div class="grid-item h_250">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-14.png');">14</div>
+					</div>
+					<div class="grid-item h_480">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-15.png');">15</div>
+					</div>
+					
+					
+					<div class="grid-item h_270">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-16.png');">16</div>
+					</div>
+					<div class="grid-item h_270">
+						<div class="item" style="background-image:url('/assets/img/influencers/influencers-17.png');">17</div>
+					</div>
+					
+				</div>
+				
+				<div class="row flex m-top">
+					<div class="col xs">
+						<label for="genderSelect" class="select-options">
+							<select class="grey" name="" id="genderSelect" required>
+								<option hidden selected disabled>*Male / Female</option>
+								<option value="male">Male</option>
+								<option value="female">Female</option>
+							</select>
+							<span class="arrow"></span>
+						</label>
+					</div>
+					<div class="col lg">
+						<input class="grey" type="text" name="" placeholder="Job titles">
+					</div>
+					<div class="col md">
+						<input class="grey" type="text" name="" placeholder="Website">
+					</div>
+					<div class="col sm">
+						<input class="grey" type="text" name="" placeholder="*Phone" required>
+					</div>
+					<div class="col md">
+						<label for="providedServices" class="select-options">
+							<select class="grey" name="" id="providedServices" required>
+								<option hidden selected disabled>*Services you provide</option>
+								<option value="1">test</option>
+								<option value="2">test 2</option>
+							</select>
+							<span class="arrow"></span>
+						</label>
+					</div>
+					<div class="col sm">
+						<input class="grey" type="text" name="" placeholder="*City of Residence" required>
+					</div>
+					<div class="col md">
+						<label for="areaOfSpecialism" class="select-options">
+							<select class="grey" name="" id="areaOfSpecialism" required>
+								<option hidden selected disabled>*Areas of specialism</option>
+								<option value="1">test</option>
+								<option value="2">test 2</option>
+							</select>
+							<span class="arrow"></span>
+						</label>
+					</div>
+					
+					<div class="col sm">
+						<label for="invitationCode" class="select-options">
+							<select class="grey" name="" id="invitationCode" required>
+								<option hidden selected disabled>*I have an invitation code</option>
+								<option value="1">test</option>
+								<option value="2">test 2</option>
+							</select>
+							<span class="arrow"></span>
+						</label>
+					</div>
+					
+					<div class="col justify-center">
+						<div class="check_terms">
+							<div class="checkbox">
+								<input type="checkbox" id="terms" required>
+								<span class="check"></span>
+							</div>
+							<label for="terms">
+								<span>Our</span> <a href="#">terms and conditions</a> and <a href="#"> privacy policy</a> <span>for your data protections</span>
+							</label>
+						</div>
+						<button type="submit" class="grey">Submit</button>
+					</div>
+				</div>
+			</form>
+		</section>
+		
+		<section class="londons_exclusive" style="background-image: url(/assets/img/home/londons-exclusive.png);">
+			<div class="background_mobile" style="background-image: url('/assets/img/home/londons-exclusive.png');">
+				<span class="border"></span>
+				<h3>London’s exclusive lux promos, tickets, invitations and gifts, all in one monthly email</h3>
+			</div>
+			
+			<p>The HOI monthly members email provides our readers with the latest <br>
+				launches, openings, dining experiences, exclusive events and lux-lifestyle promotions. </p>
+			<form action="">
+				<input type="email" name="" placeholder="Email address" required>
+				<button type="submit">Join</button>
+			</form>
+			<p class="terms">By entering your email address you agree to our <a href="#">terms and conditions</a> and <a href="#">privacy policy</a>.</p>
+		</section>
+		
+		<section class="follow_us">
+			<h3 class="section-label">follow us on instagram</h3>
+			
+			<div class="row flex">
+				<div class="item" style="background-image: url(/assets/img/follow/follow-1.png);"></div>
+				<div class="item" style="background-image: url(/assets/img/follow/follow-2.png);"></div>
+				<div class="item" style="background-image: url(/assets/img/follow/follow-3.png);"></div>
+				<div class="item" style="background-image: url(/assets/img/follow/follow-4.png);"></div>
+				<div class="item" style="background-image: url(/assets/img/follow/follow-5.png);"></div>
+				<div class="item" style="background-image: url(/assets/img/follow/follow-6.png);"></div>
+			</div>
+			
+			<p>Follow Us <a href="#"><img src="/assets/img/socials/instagram-grey.png" alt="instagram"></a></p>
+		</section>
+	</main>
+	
+	<footer id="footer"></footer>
+</div>
+
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+<script type="text/javascript" src="/assets/js/scripts.js"></script>
+</body>
+</html>

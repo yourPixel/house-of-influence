@@ -1,0 +1,114 @@
+section{
+	&.contacts-main-section{
+		padding: 255px 0 0 180px;
+		position: relative;
+		min-height: 525px;
+		@include bg(center, cover);
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+
+		h3 {
+			@include font(25px, 700, "Brandon");
+			color: #ffffff;
+			text-transform: uppercase;
+			max-width: 520px;
+		}
+
+		img {
+			position: absolute;
+			right: 49px;
+			bottom: -125px;
+			width: 514px;
+		}
+	}
+}
+
+body.contact-page{
+	section{
+		&.registration-form{
+			.m-top {
+				margin-top: 25px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width:1230px){
+	section{
+		&.contacts-main-section{
+			padding: 220px 0 0 100px;
+			min-height: 480px;
+			img {
+				width: 414px;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 1024px) {
+	section {
+		&.contacts-main-section {
+			padding: 200px 0 300px 0;
+			align-items: center;
+			justify-content: center;
+
+			.background_mobile {
+				background-size: 0;
+			}
+
+			img {
+				right: -40px;
+				bottom: -50px;
+				width: 250px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px){
+	section{
+		&.contacts-main-section {
+			padding: 0;
+			background-size: 0;
+			height: 100vh;
+			z-index: 2;
+
+			.background_mobile {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flex;
+				display: -o-flex;
+				display: flex;
+				align-items: flex-start;
+				justify-content: center;
+				z-index: -1;
+				@include bg(center);
+				padding: 210px 8px 150px;
+				height: 100vh;
+			}
+			h3 {
+				position: relative;
+				text-align: center;
+				font-size: 17px;
+				display: inline-block;
+			}
+
+			img {
+				position: relative;
+				display: inline-block;
+				width: 200px;
+				right: 0;
+				margin-left: 20px;
+				bottom: 45px;
+			}
+		}
+	}
+}

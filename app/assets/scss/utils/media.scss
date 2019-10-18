@@ -38,6 +38,10 @@
 		padding: 100px 30px 100px;
 	}
 
+	section.londons_exclusive p br{
+		display: none;
+	}
+
 	section.londons_exclusive h3 {
 		padding: 0 60px;
 	}
@@ -67,8 +71,8 @@
 	}
 
 	section.follow_us .item {
-		width: 145px;
-		height: 145px;
+		width: 135px;
+		height: 135px;
 	}
 
 	section.roll_with_us h2 {
@@ -388,10 +392,17 @@
 		margin-bottom: 30px;
 	}
 
+	section.follow_us .row.flex {
+		justify-content: center;
+		align-items: center;
+	}
+
 	section.follow_us .item {
 		width: 155px;
 		height: 155px;
-		margin-bottom: 35px;
+		margin-left: 7px;
+		margin-right: 7px;
+		margin-bottom: 15px;
 	}
 
 	section.follow_us p {
@@ -805,13 +816,14 @@
 	}
 
 	section.follow_us .row.flex {
-		justify-content: space-around;
+		justify-content: center;
+		align-items: center;
 	}
 
 	section.follow_us .item {
 		width: 165px;
 		height: 165px;
-		margin: 0 10px 20px;
+		margin: 0 7px 15px;
 	}
 
 	section.roll_with_us {
@@ -834,22 +846,8 @@
 }
 
 @media only screen and (max-width:420px) {
-	section.follow_us .row.flex {
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	section.follow_us .item {
-		width: 165px;
-		height: 165px;
-		margin: 0 auto 20px;
-	}
-}
-
-@media only screen and (max-width:425px) {
 	section.discover_city .background_mobile {
 		background-attachment: scroll;
 		background-position: center top;
 	}
-
 }

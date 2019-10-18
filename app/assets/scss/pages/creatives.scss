@@ -1,5 +1,5 @@
 section {
-	&.creatives-main-section {
+	&.registration-main-section {
 		min-height: 530px;
 		@include bg(center);
 		display: -webkit-flex;
@@ -19,7 +19,7 @@ section {
 		}
 	}
 
-	&.creatives-reg {
+	&.registration-form {
 		padding: 45px 0 0;
 
 		.m-top {
@@ -47,53 +47,31 @@ section {
 			margin-bottom: 30px;
 		}
 
-		form {
-			display: block;
-
-			input {
-				margin-bottom: 20px;
-			}
-
-			button {
-				padding: 0 18px;
-				margin-left: 20px;
-				margin-top: 25px;
-			}
-
-			.check_terms {
-				display: -webkit-flex;
-				display: -moz-flex;
-				display: -ms-flex;
-				display: -o-flex;
-				display: flex;
-				margin-top: 25px;
-
-				label {
-					font-size: 20px;
-				}
-			}
-		}
-
 		.feature-block {
 			width: 100%;
 			min-height: 245px;
 		}
+	}
+}
 
-		.col {
-			&.xs {
-				width: 19%;
+.venues-page{
+	section{
+		&.registration-form{
+			.m-top {
+				margin-top: 45px;
 			}
-
-			&.sm {
-				width: 36%;
+			form{
+				.check_terms{
+					margin-top: 0;
+				}
+				button{
+					margin-top: 0;
+				}
 			}
-
-			&.md {
-				width: 64%;
-			}
-
-			&.lg {
-				width: 81%;
+			@media only screen and (max-width: 1024px){
+				.m-top {
+					margin-top: 30px;
+				}
 			}
 		}
 	}
@@ -101,20 +79,21 @@ section {
 
 @media only screen and (max-width: 1024px) {
 	section {
-		&.creatives-main-section {
-			padding: 185px 0 150px 0;
+		&.registration-main-section {
+			padding: 135px 0 135px 0;
 			align-items: center;
 			justify-content: center;
+			min-height: auto;
 
 			.background_mobile {
 				background-size: 0;
 			}
 			h2{
-				padding: 0 20px;
+				padding: 0;
 			}
 		}
 
-		&.creatives-reg {
+		&.registration-form {
 			padding-top: 38px;
 			h3.section-label {
 				margin-bottom: 30px;
@@ -128,28 +107,6 @@ section {
 				margin-bottom: 25px;
 			}
 
-			form{
-				input, label.select-options{
-					margin-bottom: 15px;
-					display: block;
-				}
-				button{
-					margin-top: 0;
-				}
-				.check_terms{
-					margin-top: 0;
-					label{
-						font-size: 16px;
-						a:first-of-type{
-							display: block;
-						}
-						span{
-							display: none;
-						}
-					}
-				}
-			}
-
 			.m-top {
 				margin-top: 35px;
 			}
@@ -157,9 +114,6 @@ section {
 			.col {
 				&.justify-center{
 					justify-content: space-between;
-				}
-				&.xs, &.sm, &.md, &.lg {
-					width: 100%;
 				}
 			}
 		}
@@ -173,7 +127,7 @@ section {
 			letter-spacing: 9px;
 		}
 
-		&.creatives-main-section {
+		&.registration-main-section {
 			padding: 0;
 			background-size: 0;
 			height: 100vh;
@@ -201,35 +155,12 @@ section {
 			}
 		}
 
-		&.creatives-reg {
+		&.registration-form {
 			padding-right: 15px;
 			padding-left: 15px;
 
-
-
 			.feature-block {
 				min-height: 150px;
-			}
-		}
-
-		&.influental-people {
-			padding: 50px 15px 0;
-
-			h3.section-label {
-				margin-bottom: 30px;
-			}
-
-			//p.section-description{
-			//	margin-bottom: 30px;
-			//}
-			.item {
-				min-height: 430px;
-
-				h3 {
-					font-size: 28px;
-					letter-spacing: 10px;
-					line-height: 40px;
-				}
 			}
 		}
 	}

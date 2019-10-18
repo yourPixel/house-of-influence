@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>HOI | Creatives</title>
+	<title>HOI | Creatives registration</title>
 	<link rel="stylesheet" href="../assets/css/main.css">
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,16 +16,16 @@
 <header id="header"></header>
 <div class="container">
 	<main>
-		<section class="creatives-main-section" style="background-image: url('/assets/img/creatives/bg.png');">
+		<section class="registration-main-section" style="background-image: url('/assets/img/creatives/bg.png');">
 			<!-- this background for mobile version -->
-			<div class="background_mobile fixed-content" style="background-image: url('/assets/img/creatives/bg.png');">
+			<div class="background_mobile fixed-content" style="background-image: url('/assets/img/creatives/bg-mobile.png');">
 				<h2>creatives</h2>
 			</div>
 		</section>
 		
-		<section class="creatives-reg">
+		<section class="registration-form">
 			<h3 class="section-label">creatives registration</h3>
-			<form action="">
+			<form action="" class="collect-info-form">
 				<div class="row flex">
 					<div class="col-6"><input class="grey" type="text" placeholder="*Name" name="" required/></div>
 					<div class="col-6"><input class="grey" type="text" placeholder="*Surname" name="" required/></div>
@@ -71,7 +71,7 @@
 				<div class="row flex m-top">
 					<div class="col xs">
 						<label for="genderSelect" class="select-options">
-							<select class="grey" name="" id="genderSelect">
+							<select class="grey" name="" id="genderSelect" required>
 								<option hidden selected disabled>*Male / Female</option>
 								<option value="male">Male</option>
 								<option value="female">Female</option>
@@ -86,11 +86,11 @@
 						<input class="grey" type="text" name="" placeholder="Website">
 					</div>
 					<div class="col sm">
-						<input class="grey" type="text" name="" placeholder="*Phone">
+						<input class="grey" type="text" name="" placeholder="*Phone" required>
 					</div>
 					<div class="col md">
 						<label for="providedServices" class="select-options">
-							<select class="grey" name="" id="providedServices">
+							<select class="grey" name="" id="providedServices" required>
 								<option hidden selected disabled>*Services you provide</option>
 								<option value="1">test</option>
 								<option value="2">test 2</option>
@@ -99,11 +99,11 @@
 						</label>
 					</div>
 					<div class="col sm">
-						<input class="grey" type="text" name="" placeholder="*City of Residence">
+						<input class="grey" type="text" name="" placeholder="*City of Residence" required>
 					</div>
 					<div class="col md">
 						<label for="areaOfSpecialism" class="select-options">
-							<select class="grey" name="" id="areaOfSpecialism">
+							<select class="grey" name="" id="areaOfSpecialism" required>
 								<option hidden selected disabled>*Areas of specialism</option>
 								<option value="1">test</option>
 								<option value="2">test 2</option>
@@ -111,8 +111,16 @@
 							<span class="arrow"></span>
 						</label>
 					</div>
+					
 					<div class="col sm">
-						<input class="grey" type="text" name="" placeholder="*I have an invitation code">
+						<label for="invitationCode" class="select-options">
+							<select class="grey" name="" id="invitationCode" required>
+								<option hidden selected disabled>*I have an invitation code</option>
+								<option value="1">test</option>
+								<option value="2">test 2</option>
+							</select>
+							<span class="arrow"></span>
+						</label>
 					</div>
 					
 					<div class="col justify-center">
@@ -162,47 +170,7 @@
 		</section>
 	</main>
 	
-	<footer>
-		<span class="border"></span>
-		<div class="contact_info">
-			<span class="title">HOI Contact Info:</span>
-			<p>
-				20 Conway Road <br>
-				Richmond-Upon-Thames <br>
-				TW4 5LR <br>
-				Tel: 0208 274 1128
-			</p>
-			<div class="socials">
-				<a href="#"><img src="/assets/img/socials/pinterest.png" alt="pinterest"></a>
-				<a href="#"><img src="/assets/img/socials/instagram-white.png" alt="instagram"></a>
-				<a href="#"><img src="/assets/img/socials/facebook.png" alt="facebook"></a>
-				<a href="#"><img src="/assets/img/socials/youtube.png" alt="youtube"></a>
-			</div>
-			<p>Secure payments via <a href="#">STRIPE</a></p>
-			<p>Payment types: Visa, MasterCard, Paypal
-				<span class="payment_method">
-							<img class="payment" src="/assets/img/socials/visa.png" alt="visa">
-							<img class="payment" src="/assets/img/socials/master-card.png" alt="master-card">
-							<img class="payment" src="/assets/img/socials/paypal.png" alt="paypal">
-						</span>
-			</p>
-		</div>
-		<div class="contact_info">
-			<img src="/assets/img/socials/drinkaware-logo.png" alt="drinkaware-logo">
-			<p>HOI supports the responsible <br> consumption of alcohol</p>
-			<p class="space">
-				<span class="title">Work with us: </span>
-				<a href="#" class="work-with-us">Blogers</a>
-				<a href="#" class="work-with-us">Influencer</a>
-				<a href="#" class="work-with-us">Partners</a>
-			</p>
-			<p class="space">Our <a href="#">terms & conditions</a> and <a href="#">privacy policy</a></p>
-			<form action="">
-				<input type="email" name="" placeholder="Email address" required>
-				<button type="submit">Submit</button>
-			</form>
-		</div>
-	</footer>
+	<footer id="footer"></footer>
 </div>
 
 <script type="text/javascript" src="/assets/js/scripts.js"></script>

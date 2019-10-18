@@ -322,43 +322,6 @@ section.launch_party {
 	}
 }
 
-/************************  follow_us *************************/
-section.follow_us {
-	padding-top: 65px;
-	h3.section-label {
-		margin-bottom: 60px;
-	}
-	.row.flex {
-		justify-content: space-between;
-		margin: 0;
-	}
-	.item {
-		height: 165px;
-		width: 165px;
-		-webkit-background-size: cover;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-	p {
-		@include font(28px, 400);
-		text-align: center;
-		color: #000;
-		line-height: 100%;
-		padding: 0 39px;
-		margin-top: 43px;
-		a {
-			display: inline-block;
-			color: inherit;
-			margin-left: 9px;
-			vertical-align: middle;
-		}
-	}
-	img {
-		max-width: 40px;
-	}
-}
-
 /************************* roll_with_us ***************************/
 section.roll_with_us {
 	position: relative;
