@@ -16,6 +16,8 @@ section.discover_city {
 		text-transform: uppercase;
 		padding: 0 180px;
 		margin-bottom: 38px;
+		position: relative;
+		z-index: 3;
 	}
 
 	h3 {
@@ -25,7 +27,19 @@ section.discover_city {
 		margin-bottom: 38px;
 	}
 
+	span.white-bg{
+		position: absolute;
+		display: none;
+		width: 100%;
+		background-color: #fff;
+		height: 100%;
+		z-index: 2;
+		left: 0;
+	}
+
 	.scroll_down {
+		position: relative;
+		z-index: 3;
 		@include font(14px, 400);
 		display: none;
 		margin-top: -18px;
@@ -48,17 +62,21 @@ section.discover_city {
 	.background_mobile img {
 		display: none;
 		margin-bottom: 25px;
-		transition: 0.1s;
+		position: relative;
+		z-index: 2;
 	}
+	form{
+		position: relative;
+		z-index: 3;
+		input {
+			max-width: 207px;
+			margin: 0 15px;
+		}
 
-	form input {
-		max-width: 207px;
-		margin: 0 15px;
-	}
-
-	form button {
-		padding: 0 32px;
-		margin: 0 15px;
+		button {
+			padding: 0 32px;
+			margin: 0 15px;
+		}
 	}
 }
 
@@ -358,6 +376,7 @@ section.roll_with_us {
 		input, textarea{
 			max-width: 205px;
 			margin: 0 15px;
+			height: 32px;
 		}
 		input{
 			&.medium {
