@@ -175,10 +175,7 @@ div.col-sm-6{
 	-moz-transition: opacity, 1500ms;
 	transition: opacity, 1500ms;
 	pointer-events: none;
-	&.loaded {
-		opacity: 0;
-		position: absolute;
-	}
+
 	.line {
 		position: fixed;
 		left: 0;
@@ -218,6 +215,10 @@ div.col-sm-6{
 			opacity: 1;
 			position: fixed;
 		}
+	}
+	&.loaded {
+		opacity: 0;
+		position: absolute;
 	}
 }
 
@@ -286,10 +287,10 @@ form {
 	input, textarea, select {
 		@include font(18px, 400, "Garamond");
 		width: 100%;
-		height: 32px;
+		min-height: 32px;
 		border-radius: 7px;
 		color: rgba(0, 0, 0, 0.63);
-		padding: 0 19px;
+		padding: 3px 19px;
 		background-color: #fff;
 		border: 1px solid transparent;
 		outline: none;
@@ -417,15 +418,95 @@ h5.item-label{
 }
 
 .cookie_policy {
+	position: relative;
 	background-color: #636363;
 	padding: 15px;
 	display: none;
+	z-index: 3;
 }
 
 .cookie_policy p {
 	@include font(18px, 500, "Garamond");
 	line-height: 100%;
 	color: #fff;
+}
+
+.notification-item{
+	position: fixed;
+	width: calc(100% - 20px);
+	right: 10px;
+	left: 10px;
+	bottom: 0;
+	padding: 20px 40px;
+	min-height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: rgba(0,0,0,0.93);
+	color: #fff;
+	opacity: 0;
+	transform: translateY(100%);
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+	transition: bottom 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	&.opened{
+		opacity: 1;
+		bottom: 10px;
+		transform: translateY(0);
+	}
+	.notification-container{
+		max-width: 1170px;
+		width: 100%;
+	}
+	h4{
+		@include font(20px, 600, 'Garamond');
+		text-align: center;
+	}
+	p{
+		@include font(18px, 400, 'Garamond');
+		text-align: center;
+		opacity: 0.6;
+		margin-top: 8px;
+	}
+	span.close-notification {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		width: 19px;
+		height: 19px;
+		cursor: pointer;
+		transition: opacity 0.2s ease-in-out;
+		&:hover {
+			opacity: 0.8;
+		}
+		img{
+			max-width: 20px;
+		}
+	}
+
+	@media only screen and (max-width: 1024px){
+		h4{
+			font-size: 18px;
+			line-height: 21px;
+		}
+		p{
+			font-size: 16px;
+			margin-top: 5px;
+			line-height: 19px;
+		}
+	}
+	@media only screen and (max-width: 600px){
+		h4, p{
+			text-align: left;
+		}
+		width: calc(100% - 10px);
+		left: 5px;
+		right: 5px;
+		padding: 20px 50px 20px 20px;
+		&.opened{
+			bottom: 5px;
+		}
+	}
 }
 
 .cookie_policy p a {
@@ -444,14 +525,15 @@ header {
 		position: absolute;
 		width: 100%;
 		height: 65px;
-		top: -65px;
+		top: 0;
+		transform: translateY(-65px);
 		opacity: 0;
 		left: 0;
 		background-color: #fff;
 		display: none;
 		align-items: center;
 		padding-left: 15px;
-		transition: opacity 0.2s ease, top 0.2s ease;
+		transition: opacity 0.2s ease, transform 0.2s ease;
 		a.logo {
 			opacity: 1;
 			position: relative;
@@ -725,6 +807,11 @@ section {
 
 			input, textarea, select{
 				border-width: 2px;
+			}
+
+			select{
+				height: auto;
+				white-space: pre-wrap;
 			}
 
 			button{

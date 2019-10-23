@@ -41,6 +41,16 @@
 	</div>
 </div>
 
+<div class="notification-item opened">
+	<div class="notification-container">
+		<h4>Thank you for registering to be selected for the House Of Influence launch party guest list</h4>
+		<p>The randomly selected registered individuals will be notified and sent their guest list tickets (with a Plus one) two weeks before the party. Good luck!</p>
+	</div>
+	<span class="close-notification" id="closeNotification">
+		<img src="/assets/img/close.png" alt="close-btn">
+	</span>
+</div>
+
 <script>
 	$("document").ready(function() {
 		$(window).scroll(function(e){
@@ -48,13 +58,14 @@
 			if (body.clientWidth < 600) {
 				if (scrollT > 65) {
 					$('.header_bg').css({
-						'top': "0",
+						'transform': "translateY(0)",
 						'opacity': '1'
 					});
 					$('.open_menu_btn').addClass('grey');
 				}else{
 					$('.header_bg').css({
-						'top': `-65px`,
+						'transform': `translateY(-65px)`,
+						'opacity': '1',
 					});
 					$('.open_menu_btn').removeClass('grey');
 				}
@@ -95,6 +106,12 @@
 		$('.main_menu li a').each(function() {
 			var $this = $(this);
 			addActiveClass($this);
+		});
+		
+		// notifications
+		
+		$('#closeNotification').click(function () {
+			$(this).parent().removeClass('opened');
 		})
 	})
 </script>

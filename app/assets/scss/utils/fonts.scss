@@ -56,3 +56,13 @@
 	font-weight: 300;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'Dinpro';
+	src: url('../fonts/DINPro-CondensedBold/DINPro-CondensedBold.eot');
+	src: url('../fonts/DINPro-CondensedBold/DINPro-CondensedBold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/DINPro-CondensedBold/DINPro-CondensedBold.woff2') format('woff2'),
+	url('../fonts/DINPro-CondensedBold/DINPro-CondensedBold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}

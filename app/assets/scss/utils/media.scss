@@ -565,30 +565,35 @@
 		overflow: hidden;
 		background: rgba(0, 0, 0, 0.9);
 		top: 0;
-		right: -200px;
-		transition: right 0.3s ease-in-out;
+		right: 0;
+		transform: translateX(200px);
+		transition: transform 0.3s ease-in-out;
 		padding-bottom: 250px;
 	}
 
 	header nav.opened_menu {
-		right: 0;
+		transform: translateX(0);
 	}
 
 	header nav img.menu_logo {
 		display: block;
 		position: absolute;
-		bottom: -63px;
-		right: -49px;
+		//bottom: -63px;
+		//right: -49px;
+		right: 0;
+		bottom: 0;
+		transform: translateX(59px) translateY(73px);
 		width: 200px;
 		height: 200px;
 		opacity: 0.4;
-		transition: bottom 0.1s ease-in-out, right 0.1s ease-in-out, opacity 0.1s ease-in-out;
+		transition: transform 0.2s ease, opacity 0.2s ease;
 		transition-delay: 0.2s;
 	}
 
 	header nav.opened_menu img.menu_logo {
-		bottom: -43px;
-		right: -29px;
+		//bottom: -43px;
+		//right: -29px;
+		transform: translateX(29px) translateY(43px);
 		opacity: 1;
 	}
 
@@ -596,10 +601,12 @@
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: flex-start;
-		padding-top: 80px;
+		padding-top: 20px;
+		margin-top: 60px;
 		overflow-y: auto;
 		overflow-x: hidden;
-		height: calc(100vh - 170px);
+		height: calc(100vh - 230px);
+		width: 90%;
 	}
 
 	header nav ul.main_menu li.menu_item {
@@ -641,6 +648,16 @@
 		margin-bottom: 25px;
 	}
 
+	section.discover_city{
+		padding: 0;
+		padding-top: 100vh;
+		background-size: 0;
+		//height: 100vh;
+		//z-index: 2;
+	}
+	section.discover_city span.white-bg{
+		display: block;
+	}
 	section.discover_city .background_mobile {
 		height: 100vh;
 		display: -webkit-flex;
@@ -653,15 +670,28 @@
 		overflow: hidden;
 		padding: 0;
 		justify-content: center;
-		min-height: 435px;
+		min-height: 320px;
 		max-height: 100vh;
+		//transition: transform 0.1s ease;
+	}
+	section.discover_city .background_mobile {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+		@include bg(center);
+		//padding: 185px 15px 150px;
+		height: 100vh;
 	}
 
 	section.discover_city .background_mobile img {
 		display: block;
-		height: 40%;
-		max-height: 337px;		/*max-width: 249px;*/
-		min-height: 178px;		/*min-width: 131px;*/
+		width: 249px;
+		max-width: 60%;
+		//height: 40%;
+		//max-height: 337px;
+		//min-height: 178px;
 	}
 
 	section.discover_city h1 {
@@ -851,3 +881,10 @@
 		background-position: center top;
 	}
 }
+
+@media only screen and (max-height: 500px) {
+	section.discover_city .background_mobile img {
+		width: 119px;
+	}
+}
+

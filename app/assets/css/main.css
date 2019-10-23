@@ -54,6 +54,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Dinpro';
+  src: url("../fonts/DINPro-CondensedBold/DINPro-CondensedBold.eot");
+  src: url("../fonts/DINPro-CondensedBold/DINPro-CondensedBold.eot?#iefix") format("embedded-opentype"), url("../fonts/DINPro-CondensedBold/DINPro-CondensedBold.woff2") format("woff2"), url("../fonts/DINPro-CondensedBold/DINPro-CondensedBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -258,11 +266,6 @@ div.col-sm-6 {
   pointer-events: none;
 }
 
-.main-loader.loaded {
-  opacity: 0;
-  position: absolute;
-}
-
 .main-loader .line {
   position: fixed;
   left: 0;
@@ -305,6 +308,11 @@ div.col-sm-6 {
 .main-loader .load-img.visible {
   opacity: 1;
   position: fixed;
+}
+
+.main-loader.loaded {
+  opacity: 0;
+  position: absolute;
 }
 
 form {
@@ -382,10 +390,10 @@ form input, form textarea, form select {
   font-weight: 400;
   font-family: "Garamond";
   width: 100%;
-  height: 32px;
+  min-height: 32px;
   border-radius: 7px;
   color: rgba(0, 0, 0, 0.63);
-  padding: 0 19px;
+  padding: 3px 19px;
   background-color: #fff;
   border: 1px solid transparent;
   outline: none;
@@ -527,9 +535,11 @@ h5.item-label {
 }
 
 .cookie_policy {
+  position: relative;
   background-color: #636363;
   padding: 15px;
   display: none;
+  z-index: 3;
 }
 
 .cookie_policy p {
@@ -538,6 +548,98 @@ h5.item-label {
   font-family: "Garamond";
   line-height: 100%;
   color: #fff;
+}
+
+.notification-item {
+  position: fixed;
+  width: calc(100% - 20px);
+  right: 10px;
+  left: 10px;
+  bottom: 0;
+  padding: 20px 40px;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.93);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(100%);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  transition: bottom 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.notification-item.opened {
+  opacity: 1;
+  bottom: 10px;
+  transform: translateY(0);
+}
+
+.notification-item .notification-container {
+  max-width: 1170px;
+  width: 100%;
+}
+
+.notification-item h4 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Garamond";
+  text-align: center;
+}
+
+.notification-item p {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Garamond";
+  text-align: center;
+  opacity: 0.6;
+  margin-top: 8px;
+}
+
+.notification-item span.close-notification {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.notification-item span.close-notification:hover {
+  opacity: 0.8;
+}
+
+.notification-item span.close-notification img {
+  max-width: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .notification-item h4 {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .notification-item p {
+    font-size: 16px;
+    margin-top: 5px;
+    line-height: 19px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .notification-item {
+    width: calc(100% - 10px);
+    left: 5px;
+    right: 5px;
+    padding: 20px 50px 20px 20px;
+  }
+  .notification-item h4, .notification-item p {
+    text-align: left;
+  }
+  .notification-item.opened {
+    bottom: 5px;
+  }
 }
 
 .cookie_policy p a {
@@ -558,14 +660,15 @@ header .header_bg {
   position: absolute;
   width: 100%;
   height: 65px;
-  top: -65px;
+  top: 0;
+  transform: translateY(-65px);
   opacity: 0;
   left: 0;
   background-color: #fff;
   display: none;
   align-items: center;
   padding-left: 15px;
-  transition: opacity 0.2s ease, top 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 header .header_bg a.logo {
@@ -864,6 +967,10 @@ section form.collect-info-form .check_terms label {
   section form.collect-info-form input, section form.collect-info-form textarea, section form.collect-info-form select {
     border-width: 2px;
   }
+  section form.collect-info-form select {
+    height: auto;
+    white-space: pre-wrap;
+  }
   section form.collect-info-form button {
     margin-top: 0;
   }
@@ -949,6 +1056,8 @@ section.discover_city h2 {
   text-transform: uppercase;
   padding: 0 180px;
   margin-bottom: 38px;
+  position: relative;
+  z-index: 3;
 }
 
 section.discover_city h3 {
@@ -960,7 +1069,19 @@ section.discover_city h3 {
   margin-bottom: 38px;
 }
 
+section.discover_city span.white-bg {
+  position: absolute;
+  display: none;
+  width: 100%;
+  background-color: #fff;
+  height: 100%;
+  z-index: 2;
+  left: 0;
+}
+
 section.discover_city .scroll_down {
+  position: relative;
+  z-index: 3;
   font-size: 14px;
   font-weight: 400;
   font-family: "Garamond";
@@ -988,7 +1109,13 @@ section.discover_city .scroll_down img {
 section.discover_city .background_mobile img {
   display: none;
   margin-bottom: 25px;
-  transition: 0.1s;
+  position: relative;
+  z-index: 2;
+}
+
+section.discover_city form {
+  position: relative;
+  z-index: 3;
 }
 
 section.discover_city form input {
@@ -1346,6 +1473,7 @@ section.roll_with_us img {
 section.roll_with_us form input, section.roll_with_us form textarea {
   max-width: 205px;
   margin: 0 15px;
+  height: 32px;
 }
 
 section.roll_with_us form input.medium {
@@ -2301,18 +2429,50 @@ section.award-new .m-top {
   }
 }
 
+section.influencers-main-section {
+  min-height: 530px;
+  padding: 0 0 220px 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+section.influencers-main-section h2 {
+  font-size: 25px;
+  font-weight: 400;
+  font-family: "AceSans";
+  color: #fff;
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+section.influencers-reg-form .m-top {
+  margin-top: 20px;
+}
+
 section.influencers-reg-form .grid {
   min-width: 100%;
   margin-right: -15px;
   margin-left: -15px;
 }
 
-section.influencers-reg-form .grid-item {
+section.influencers-reg-form .grid .grid-item {
   padding: 0 15px;
   margin-bottom: 30px;
 }
 
-section.influencers-reg-form .item {
+section.influencers-reg-form .grid .grid-item .item {
+  cursor: pointer;
+  position: relative;
+  display: flex;
   background-color: red;
   background-repeat: no-repeat;
   background-position: center;
@@ -2320,47 +2480,635 @@ section.influencers-reg-form .item {
   background-size: cover;
   width: 100%;
   height: 100%;
+  z-index: 2;
 }
 
-section.influencers-reg-form .grid-sizer,
-section.influencers-reg-form .grid-item {
+section.influencers-reg-form .grid .grid-item .item.selected::before {
+  opacity: 0;
+}
+
+section.influencers-reg-form .grid .grid-item .item input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+section.influencers-reg-form .grid .grid-item .item input:checked ~ span {
+  opacity: 1;
+}
+
+section.influencers-reg-form .grid .grid-item .item h4 {
+  font-family: "Dinpro", serif;
+  font-weight: bold;
+  font-style: normal;
+  pointer-events: none;
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: left;
+  word-break: break-all;
+}
+
+section.influencers-reg-form .grid .grid-item .item h4 span {
+  display: block;
+}
+
+section.influencers-reg-form .grid .grid-item .item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+section.influencers-reg-form .grid .grid-item .item span.code {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 62px;
+  padding-right: 27px;
+  padding-top: 22px;
+  pointer-events: none;
+  color: #fff;
+  opacity: 0;
+  font-size: 90px;
+  font-weight: bold;
+  font-family: "Dinpro";
+  text-align: right;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.3s ease-in-out;
+}
+
+section.influencers-reg-form .grid .grid-item .item._1 {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-left: 20px;
+  padding-bottom: 50px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._1 h4 {
+  font-size: 49px;
+  line-height: 37px;
+  letter-spacing: -2.45px;
+  text-align: left;
+}
+
+section.influencers-reg-form .grid .grid-item .item._2 {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._2 h4 {
+  font-size: 53px;
+  line-height: 46px;
+  letter-spacing: -2.65px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._2 h4 span:nth-child(1) {
+  margin-left: 61px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._2 h4 span:nth-child(2) {
+  margin-left: 109px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._2 h4 span:nth-child(3) {
+  margin-left: 100px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._2 h4 span:nth-child(4) {
+  margin-left: 109px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._3 {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-bottom: 140px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._3 h4 {
+  font-size: 64px;
+  line-height: 51px;
+  letter-spacing: -3.2px;
+  text-align: left;
+}
+
+section.influencers-reg-form .grid .grid-item .item._3 h4 span:nth-child(1) {
+  margin-left: 15px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._3 h4 span:nth-child(2) {
+  margin-left: 45px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._3 h4 span:nth-child(3) {
+  margin-left: 47px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._4 {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-left: 10px;
+  padding-bottom: 8px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._4 h4 {
+  font-size: 64px;
+  line-height: 55px;
+  letter-spacing: -3.2px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._5 {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-left: 30px;
+  padding-bottom: 54px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._5 h4 {
+  font-size: 44px;
+  line-height: 35px;
+  letter-spacing: -1.628px;
+  text-align: right;
+}
+
+section.influencers-reg-form .grid .grid-item .item._6 {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._6 h4 {
+  font-size: 48px;
+  line-height: 39px;
+  letter-spacing: -2.4px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._6 h4 span:nth-child(1) {
+  margin-left: 68px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._6 h4 span:nth-child(2) {
+  margin-left: 30px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._6 h4 span:nth-child(3) {
+  margin-left: 64px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._6 h4 span:nth-child(4) {
+  margin-left: 30px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._7 {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 26px;
+  padding-left: 45px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._7 span.code {
+  top: auto;
+  bottom: 22px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._7 h4 {
+  font-size: 64px;
+  line-height: 52px;
+  letter-spacing: -3.2px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._8 {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 10px;
+  padding-left: 13px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._8 h4 {
+  font-size: 63px;
+  line-height: 52px;
+  letter-spacing: -3.15px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._9 {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 40px;
+  padding-left: 33px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._9 h4 {
+  font-size: 53px;
+  line-height: 41px;
+  letter-spacing: -2.65px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._10 {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 32px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._10 h4 {
+  font-size: 44px;
+  line-height: 36px;
+  letter-spacing: -2.2px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._10 h4 span:nth-child(1) {
+  margin-left: 70px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._10 h4 span:nth-child(2) {
+  margin-left: 112px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._10 h4 span:nth-child(3) {
+  margin-left: 53px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._11 {
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  padding-right: 9px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._11 h4 {
+  font-size: 64px;
+  line-height: 50px;
+  letter-spacing: -3.2px;
+  text-align: right;
+}
+
+section.influencers-reg-form .grid .grid-item .item._11 h4 span:nth-child(2) {
+  margin-right: 46px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._11 h4 span:nth-child(3) {
+  margin-right: 68px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._12 {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-bottom: 17px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._12 h4 {
+  font-size: 70px;
+  line-height: 55px;
+  letter-spacing: -3.5px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._12 h4 span:nth-child(1) {
+  margin-left: 15px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._12 h4 span:nth-child(2) {
+  margin-left: 50px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._12 h4 span:nth-child(3) {
+  margin-left: 42px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._13 {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-bottom: 62px;
+  padding-left: 23px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._13 h4 {
+  font-size: 48px;
+  line-height: 37px;
+  letter-spacing: -2.4px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._14 {
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 75px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._14 h4 {
+  font-size: 45px;
+  line-height: 35px;
+  letter-spacing: -2.25px;
+  text-align: right;
+}
+
+section.influencers-reg-form .grid .grid-item .item._14 h4 span:nth-child(1) {
+  margin-right: 104px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._14 h4 span:nth-child(2) {
+  margin-right: 15px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._15 {
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-bottom: 68px;
+  padding-right: 18px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._15 h4 {
+  font-size: 64px;
+  line-height: 50px;
+  letter-spacing: -3.2px;
+  text-align: right;
+}
+
+section.influencers-reg-form .grid .grid-item .item._16 {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-bottom: 58px;
+  padding-left: 12px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._16 h4 {
+  font-size: 49px;
+  line-height: 40px;
+  letter-spacing: -2.45px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._17 {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 28px;
+  padding-left: 26px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._17 h4 {
+  font-size: 48px;
+  line-height: 39px;
+  letter-spacing: -2.4px;
+}
+
+section.influencers-reg-form .grid .grid-item .item._17 span.code {
+  top: auto;
+  bottom: 22px;
+}
+
+section.influencers-reg-form .grid .grid-sizer,
+section.influencers-reg-form .grid .grid-item {
   width: 33.333%;
 }
 
-section.influencers-reg-form .h_230 {
+section.influencers-reg-form .grid .h_230 {
   height: 230px;
 }
 
-section.influencers-reg-form .h_250 {
+section.influencers-reg-form .grid .h_250 {
   height: 250px;
 }
 
-section.influencers-reg-form .h_270 {
+section.influencers-reg-form .grid .h_270 {
   height: 270px;
 }
 
-section.influencers-reg-form .h_280 {
+section.influencers-reg-form .grid .h_280 {
   height: 280px;
 }
 
-section.influencers-reg-form .h_290 {
+section.influencers-reg-form .grid .h_290 {
   height: 290px;
 }
 
-section.influencers-reg-form .h_300 {
+section.influencers-reg-form .grid .h_300 {
   height: 300px;
 }
 
-section.influencers-reg-form .h_460 {
+section.influencers-reg-form .grid .h_460 {
   height: 460px;
 }
 
-section.influencers-reg-form .h_480 {
+section.influencers-reg-form .grid .h_480 {
   height: 480px;
 }
 
-section.influencers-reg-form .h_580 {
+section.influencers-reg-form .grid .h_580 {
   height: 580px;
+}
+
+@media only screen and (max-width: 1230px) {
+  section.influencers-reg-form .grid {
+    width: 780px;
+    min-width: 780px;
+    margin: auto;
+  }
+  section.influencers-reg-form .grid .grid-sizer,
+  section.influencers-reg-form .grid .grid-item {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  section.influencers-main-section {
+    padding: 135px 0 135px 0;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+  }
+  section.influencers-main-section .background_mobile {
+    background-size: 0;
+  }
+  section.influencers-main-section h2 {
+    padding: 0;
+  }
+  section.influencers-reg-form .grid {
+    width: 390px;
+    min-width: 390px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  section.influencers-reg-form .grid .grid-sizer,
+  section.influencers-reg-form .grid .grid-item {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  section.influencers-main-section {
+    padding: 0;
+    background-size: 0;
+    height: 100vh;
+    z-index: 2;
+  }
+  section.influencers-main-section .background_mobile {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding: 185px 15px 150px;
+    height: 100vh;
+  }
+  section.influencers-main-section h2 {
+    font-size: 20px;
+  }
+  section.influencers-reg-form .grid {
+    width: 100%;
+    min-width: auto;
+    max-width: 350px;
+    margin: auto;
+  }
+  section.influencers-reg-form .grid .grid-sizer,
+  section.influencers-reg-form .grid .grid-item {
+    width: 100%;
+  }
+  section.influencers-reg-form .grid .grid-item {
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._1 h4 {
+    font-size: 47px;
+    line-height: 35px;
+    letter-spacing: -2.35px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._2 h4 {
+    font-size: 50px;
+    line-height: 44px;
+    letter-spacing: -2.5px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._3 h4 {
+    font-size: 61px;
+    line-height: 49px;
+    letter-spacing: -3.05px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._4 h4 {
+    font-size: 61px;
+    line-height: 52px;
+    letter-spacing: -3 0.5px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._5 {
+    padding-bottom: 50px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._5 h4 {
+    font-size: 42px;
+    line-height: 33px;
+    letter-spacing: -1.554px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._6 h4 {
+    font-size: 46px;
+    line-height: 37px;
+    letter-spacing: -2.35px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._7 h4 {
+    font-size: 61px;
+    line-height: 49px;
+    letter-spacing: -3.05px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._8 h4 {
+    font-size: 60px;
+    line-height: 49px;
+    letter-spacing: -3.05px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._9 h4 {
+    font-size: 50px;
+    line-height: 39px;
+    letter-spacing: -2.5px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._10 h4 {
+    font-size: 42px;
+    line-height: 34px;
+    letter-spacing: -2.1px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._11 h4 {
+    font-size: 61px;
+    line-height: 47px;
+    letter-spacing: -3.05px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._12 h4 {
+    font-size: 67px;
+    line-height: 52px;
+    letter-spacing: -3.35px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._13 {
+    padding-bottom: 60px;
+    padding-left: 20px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._13 h4 {
+    font-size: 46px;
+    line-height: 35px;
+    letter-spacing: -2.35px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._14 h4 {
+    font-size: 43px;
+    line-height: 33px;
+    letter-spacing: -2.15px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._15 h4 {
+    font-size: 61px;
+    line-height: 47px;
+    letter-spacing: -3.05px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._16 h4 {
+    font-size: 46px;
+    line-height: 38px;
+    letter-spacing: -2.35px;
+  }
+  section.influencers-reg-form .grid .grid-item .item._17 h4 {
+    font-size: 46px;
+    line-height: 37px;
+    letter-spacing: -2.35px;
+  }
+  section.influencers-reg-form .grid .h_230 {
+    height: 220px;
+  }
+  section.influencers-reg-form .grid .h_250 {
+    height: 240px;
+  }
+  section.influencers-reg-form .grid .h_270 {
+    height: 260px;
+  }
+  section.influencers-reg-form .grid .h_280 {
+    height: 270px;
+  }
+  section.influencers-reg-form .grid .h_290 {
+    height: 280px;
+  }
+  section.influencers-reg-form .grid .h_300 {
+    height: 290px;
+  }
+  section.influencers-reg-form .grid .h_460 {
+    height: 440px;
+  }
+  section.influencers-reg-form .grid .h_480 {
+    height: 460px;
+  }
+  section.influencers-reg-form .grid .h_580 {
+    height: 540px;
+  }
 }
 
 footer {
@@ -2939,37 +3687,40 @@ footer .contact_info form button {
     overflow: hidden;
     background: rgba(0, 0, 0, 0.9);
     top: 0;
-    right: -200px;
-    transition: right 0.3s ease-in-out;
+    right: 0;
+    transform: translateX(200px);
+    transition: transform 0.3s ease-in-out;
     padding-bottom: 250px;
   }
   header nav.opened_menu {
-    right: 0;
+    transform: translateX(0);
   }
   header nav img.menu_logo {
     display: block;
     position: absolute;
-    bottom: -63px;
-    right: -49px;
+    right: 0;
+    bottom: 0;
+    transform: translateX(59px) translateY(73px);
     width: 200px;
     height: 200px;
     opacity: 0.4;
-    transition: bottom 0.1s ease-in-out, right 0.1s ease-in-out, opacity 0.1s ease-in-out;
+    transition: transform 0.2s ease, opacity 0.2s ease;
     transition-delay: 0.2s;
   }
   header nav.opened_menu img.menu_logo {
-    bottom: -43px;
-    right: -29px;
+    transform: translateX(29px) translateY(43px);
     opacity: 1;
   }
   header nav ul.main_menu {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding-top: 80px;
+    padding-top: 20px;
+    margin-top: 60px;
     overflow-y: auto;
     overflow-x: hidden;
-    height: calc(100vh - 170px);
+    height: calc(100vh - 230px);
+    width: 90%;
   }
   header nav ul.main_menu li.menu_item {
     margin-left: 25px;
@@ -3003,6 +3754,14 @@ footer .contact_info form button {
   header nav ul.main_menu li.menu_item.dropdown ul.dopdown_menu li {
     margin-bottom: 25px;
   }
+  section.discover_city {
+    padding: 0;
+    padding-top: 100vh;
+    background-size: 0;
+  }
+  section.discover_city span.white-bg {
+    display: block;
+  }
   section.discover_city .background_mobile {
     height: 100vh;
     display: -webkit-flex;
@@ -3015,16 +3774,25 @@ footer .contact_info form button {
     overflow: hidden;
     padding: 0;
     justify-content: center;
-    min-height: 435px;
+    min-height: 320px;
     max-height: 100vh;
+  }
+  section.discover_city .background_mobile {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 100vh;
   }
   section.discover_city .background_mobile img {
     display: block;
-    height: 40%;
-    max-height: 337px;
-    /*max-width: 249px;*/
-    min-height: 178px;
-    /*min-width: 131px;*/
+    width: 249px;
+    max-width: 60%;
   }
   section.discover_city h1 {
     font-size: 16px;
@@ -3176,5 +3944,11 @@ footer .contact_info form button {
   section.discover_city .background_mobile {
     background-attachment: scroll;
     background-position: center top;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  section.discover_city .background_mobile img {
+    width: 119px;
   }
 }
