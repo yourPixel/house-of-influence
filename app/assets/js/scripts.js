@@ -65,8 +65,6 @@ $("document").ready(function() {
 			difference = (initialw - expectedw) * procentStartEndAnim / 100;
 		}
 		
-		console.log(difference);
-		
 		if (body.clientWidth < 425 && window.innerHeight > 450 ) {
 			if (scrollT < maxScrollTop) {
 				background_mobile(`calc(100vh - ${scrollT}px`,initialw - difference)

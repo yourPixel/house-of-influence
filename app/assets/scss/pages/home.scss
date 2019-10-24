@@ -2,6 +2,7 @@ section.discover_city {
 	padding: 176px 20px 99px;
 	@include bg(top, cover);
 	text-align: center;
+	position: static;
 	h1 {
 		@include font(34px, 400, "AceSans");
 		color: #ffffff;
@@ -30,9 +31,10 @@ section.discover_city {
 	span.white-bg{
 		position: absolute;
 		display: none;
+		pointer-events: none;
 		width: 100%;
 		background-color: #fff;
-		height: 100%;
+		height: calc(100% - 100vh + 15px);
 		z-index: 2;
 		left: 0;
 	}
@@ -426,3 +428,477 @@ section.roll_with_us {
 	}
 }
 
+@media only screen and (max-width:1230px) {
+	section.discover_city {
+		padding: 106px 20px 99px;
+		h1 {
+			padding: 0 50px;
+		}
+		h2 {
+			padding: 0 90px;
+		}
+	}
+
+	section.join_team{
+		form {
+			flex-wrap: wrap;
+			width: 570px;
+			margin: auto;
+			input {
+				margin-bottom: 15px;
+			}
+
+			button {
+				display: block;
+				margin-bottom: 15px;
+			}
+		}
+
+		.content {
+			padding-bottom: 95px;
+		}
+	}
+
+	section.launch_party{
+		img {
+			max-width: 270px;
+		}
+
+		span.border::after {
+			height: 71%;
+		}
+
+		form{
+			button {
+				margin-left: 15px;
+			}
+
+			input {
+				max-width: 150px;
+				&.small {
+					max-width: 135px;
+				}
+			}
+		}
+	}
+
+	section.roll_with_us{
+		h2 {
+			margin-bottom: 140px;
+		}
+
+		img {
+			max-width: 270px;
+		}
+
+		span.border::after {
+			height: 68%;
+		}
+
+		form{
+			button {
+				margin-left: 15px;
+			}
+
+			input {
+				max-width: 150px;
+				&.medium {
+					max-width: 150px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width:1024px) {
+	section.discover_city {
+		padding: 0;
+		-webkit-background-size: 0;
+		background-size: 0;
+		h1 {
+			font-size: 25px;
+			padding: 0 10px;
+			letter-spacing: 15px;
+		}
+
+		h2 {
+			color: #000;
+			font-size: 19px;
+			padding: 0 50px;
+			margin-top: 20px;
+			margin-bottom: 23px;
+		}
+
+		h3 {
+			font-size: 20px;
+			margin-bottom: 0;
+		}
+
+		.scroll_down {
+			display: block;
+		}
+
+		.background_mobile {
+			padding: 100px 20px 100px;
+		}
+	}
+
+	section.menu_for_london{
+		.item {
+			height: 540px;
+			width: 100%;
+			h3 {
+				font-size: 28px;
+			}
+		}
+
+		.flex {
+			flex-wrap: wrap;
+		}
+	}
+
+	section.join_team {
+		padding-top: 40px;
+		.content {
+			-webkit-background-size: 0;
+			background-size: 0;
+			padding: 0;
+			h2 {
+				font-size: 35px;
+				margin-bottom: 0;
+				line-height: 46px;
+				padding: 0 50px;
+				br {
+					display: none;
+				}
+			}
+		}
+
+		.background_mobile {
+			padding: 70px 0 95px;
+			position: relative;
+			margin-bottom: 30px;
+		}
+
+		span.border {
+			width: calc(100% - 12px);
+			height: calc(100% - 12px);
+		}
+	}
+
+	section.launch_party {
+		padding-top: 40px;
+		h3.section-label {
+			margin-bottom: 30px;
+		}
+
+		img {
+			display: none;
+		}
+
+		.content {
+			-webkit-background-size: 0;
+			background-size: 0;
+			padding: 0;
+			h2 {
+				padding: 0 30px;
+				font-size: 35px;
+				margin-bottom: 0;
+				line-height: 46px;
+				letter-spacing: 15px;
+				br {
+					display: none;
+				}
+			}
+
+			p {
+				font-size: 23px;
+				color: #000;
+				padding: 0px 30px;
+				margin-bottom: 22px;
+				margin-top: 22px;
+				text-align: center;
+				a {
+					text-decoration: underline;
+					color: #000;
+					display: inline-block;
+				}
+
+				br {
+					display: none;
+				}
+			}
+		}
+
+		.background_mobile {
+			position: relative;
+			padding-top: 140px;
+			padding-bottom: 30px;
+		}
+
+		span.border {
+			border: 2px solid #fff;
+			top: 0;
+			bottom: 0;
+			width: calc(100% - 12px);
+			height: calc(100% - 12px);
+			&::before, &::after {
+				content: none;
+			}
+		}
+	}
+
+	section.tell_us{
+		.flex {
+			flex-wrap: wrap;
+		}
+
+		.item {
+			width: 100%;
+		}
+
+		.col-6:last-of-type {
+			order: 2;
+		}
+
+		h4 {
+			order: 1;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+	}
+
+	section.roll_with_us {
+		margin-top: 45px;
+		-webkit-background-size: 0;
+		background-size: 0;
+		padding: 0;
+		h3 {
+			margin-bottom: 0;
+		}
+
+		h2 {
+			font-family: "Garamond";
+			margin-bottom: 20px;
+			margin-top: 20px;
+			font-size: 30px;
+			line-height: normal;
+			color: #000;
+			letter-spacing: normal;
+		}
+
+		.background_mobile {
+			position: relative;
+			padding-top: 115px;
+			padding-bottom: 260px;
+		}
+
+		img {
+			max-width: 178px;
+			bottom: -40px;
+			top: auto;
+			right: -25px;
+		}
+
+		span.border {
+			border: 2px solid #fff;
+			border-right: none;
+			border-bottom: none;
+			top: 0;
+			bottom: 0;
+			width: calc(100% - 12px);
+			height: calc(100% - 12px);
+			&::before {
+				top: auto;
+				bottom: 0;
+				width: calc(100% - 130px);
+			}
+			&:after {
+				top: 0;
+				bottom: auto;
+				height: 74%;
+			}
+		}
+
+		form {
+			.check_terms{
+				display: flex;
+			}
+			textarea {
+				height: 87px;
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width:600px) {
+	section.discover_city{
+		padding: 0;
+		padding-top: 100vh;
+		background-size: 0;
+		span.white-bg{
+			display: block;
+		}
+		.background_mobile {
+			height: 100vh;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			overflow: hidden;
+			padding: 0;
+			justify-content: center;
+			min-height: 320px;
+			max-height: 100vh;
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			z-index: 0;
+			@include bg(center);
+			img {
+				display: block;
+				width: 249px;
+				max-width: 60%;
+				//height: 40%;
+				//max-height: 337px;
+				//min-height: 178px;
+			}
+		}
+
+		h1 {
+			font-size: 16px;
+			padding: 0 30px;
+			letter-spacing: 5px;
+			margin-bottom: 18px;
+		}
+
+		h3 {
+			font-size: 17px;
+			margin-bottom: 0;
+		}
+
+		form {
+			padding: 0 15px;
+		}
+
+		h2 {
+			padding: 0 15px;
+		}
+	}
+
+	section.menu_for_london {
+		padding: 40px 15px 0;
+		h3.section-label {
+			margin-bottom: 25px;
+		}
+
+		p.section-description {
+			margin-bottom: 35px;
+		}
+
+		.item {
+			height: 360px;
+			width: 100%;
+			margin: 0 0 15px;
+			padding: 30px;
+			h3 {
+				font-size: 20px;
+				letter-spacing: 10px;
+			}
+		}
+	}
+
+	section.join_team {
+		padding: 40px 15px 0;
+		h3.section-label {
+			margin-bottom: 30px;
+		}
+
+		.content h2 {
+			font-size: 20px;
+			line-height: normal;
+			letter-spacing: 10px;
+			padding: 0 30px;
+		}
+
+		.background_mobile {
+			padding: 40px 0 40px;
+			min-height: 240px;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	section.tell_us {
+		padding: 50px 15px 0;
+		.item {
+			height: 323px;
+			padding: 30px;
+			img {
+				width: 241px;
+			}
+			h3 br {
+				display: none;
+			}
+			&:last-of-type {
+				padding-bottom: 40px;
+			}
+		}
+
+		h4 {
+			font-size: 20px;
+		}
+	}
+
+	section.launch_party {
+		padding: 40px 15px 0;
+		.content p {
+			font-size: 18px;
+			line-height: normal;
+			padding: 0;
+			br {
+				display: none;
+			}
+		}
+	}
+
+	section.roll_with_us {
+		padding: 0 15px;
+		.background_mobile {
+			overflow: hidden;
+		}
+
+		h2 {
+			font-size: 19px;
+			padding: 0;
+		}
+	}
+}
+
+@media only screen and (max-width:420px) {
+	section.discover_city {
+		.background_mobile {
+			background-attachment: scroll;
+			background-position: center top;
+		}
+	}
+}
+
+@media only screen and (max-height: 500px) {
+	section.discover_city {
+		.background_mobile {
+			img {
+				width: 119px;
+			}
+		}
+	}
+}

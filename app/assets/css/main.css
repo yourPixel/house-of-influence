@@ -82,6 +82,7 @@ body {
 
 body::before {
   content: "";
+  display: none;
   position: absolute;
   width: 100%;
   height: calc(100% - 100vh);
@@ -1036,6 +1037,7 @@ section.discover_city {
   -webkit-background-size: cover;
   background-size: cover;
   text-align: center;
+  position: static;
 }
 
 section.discover_city h1 {
@@ -1072,9 +1074,10 @@ section.discover_city h3 {
 section.discover_city span.white-bg {
   position: absolute;
   display: none;
+  pointer-events: none;
   width: 100%;
   background-color: #fff;
-  height: 100%;
+  height: calc(100% - 100vh + 15px);
   z-index: 2;
   left: 0;
 }
@@ -1523,6 +1526,405 @@ section.roll_with_us span.border::after {
   height: 64%;
   background-color: #fff;
   width: 1.5px;
+}
+
+@media only screen and (max-width: 1230px) {
+  section.discover_city {
+    padding: 106px 20px 99px;
+  }
+  section.discover_city h1 {
+    padding: 0 50px;
+  }
+  section.discover_city h2 {
+    padding: 0 90px;
+  }
+  section.join_team form {
+    flex-wrap: wrap;
+    width: 570px;
+    margin: auto;
+  }
+  section.join_team form input {
+    margin-bottom: 15px;
+  }
+  section.join_team form button {
+    display: block;
+    margin-bottom: 15px;
+  }
+  section.join_team .content {
+    padding-bottom: 95px;
+  }
+  section.launch_party img {
+    max-width: 270px;
+  }
+  section.launch_party span.border::after {
+    height: 71%;
+  }
+  section.launch_party form button {
+    margin-left: 15px;
+  }
+  section.launch_party form input {
+    max-width: 150px;
+  }
+  section.launch_party form input.small {
+    max-width: 135px;
+  }
+  section.roll_with_us h2 {
+    margin-bottom: 140px;
+  }
+  section.roll_with_us img {
+    max-width: 270px;
+  }
+  section.roll_with_us span.border::after {
+    height: 68%;
+  }
+  section.roll_with_us form button {
+    margin-left: 15px;
+  }
+  section.roll_with_us form input {
+    max-width: 150px;
+  }
+  section.roll_with_us form input.medium {
+    max-width: 150px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  section.discover_city {
+    padding: 0;
+    -webkit-background-size: 0;
+    background-size: 0;
+  }
+  section.discover_city h1 {
+    font-size: 25px;
+    padding: 0 10px;
+    letter-spacing: 15px;
+  }
+  section.discover_city h2 {
+    color: #000;
+    font-size: 19px;
+    padding: 0 50px;
+    margin-top: 20px;
+    margin-bottom: 23px;
+  }
+  section.discover_city h3 {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  section.discover_city .scroll_down {
+    display: block;
+  }
+  section.discover_city .background_mobile {
+    padding: 100px 20px 100px;
+  }
+  section.menu_for_london .item {
+    height: 540px;
+    width: 100%;
+  }
+  section.menu_for_london .item h3 {
+    font-size: 28px;
+  }
+  section.menu_for_london .flex {
+    flex-wrap: wrap;
+  }
+  section.join_team {
+    padding-top: 40px;
+  }
+  section.join_team .content {
+    -webkit-background-size: 0;
+    background-size: 0;
+    padding: 0;
+  }
+  section.join_team .content h2 {
+    font-size: 35px;
+    margin-bottom: 0;
+    line-height: 46px;
+    padding: 0 50px;
+  }
+  section.join_team .content h2 br {
+    display: none;
+  }
+  section.join_team .background_mobile {
+    padding: 70px 0 95px;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  section.join_team span.border {
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+  }
+  section.launch_party {
+    padding-top: 40px;
+  }
+  section.launch_party h3.section-label {
+    margin-bottom: 30px;
+  }
+  section.launch_party img {
+    display: none;
+  }
+  section.launch_party .content {
+    -webkit-background-size: 0;
+    background-size: 0;
+    padding: 0;
+  }
+  section.launch_party .content h2 {
+    padding: 0 30px;
+    font-size: 35px;
+    margin-bottom: 0;
+    line-height: 46px;
+    letter-spacing: 15px;
+  }
+  section.launch_party .content h2 br {
+    display: none;
+  }
+  section.launch_party .content p {
+    font-size: 23px;
+    color: #000;
+    padding: 0px 30px;
+    margin-bottom: 22px;
+    margin-top: 22px;
+    text-align: center;
+  }
+  section.launch_party .content p a {
+    text-decoration: underline;
+    color: #000;
+    display: inline-block;
+  }
+  section.launch_party .content p br {
+    display: none;
+  }
+  section.launch_party .background_mobile {
+    position: relative;
+    padding-top: 140px;
+    padding-bottom: 30px;
+  }
+  section.launch_party span.border {
+    border: 2px solid #fff;
+    top: 0;
+    bottom: 0;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+  }
+  section.launch_party span.border::before, section.launch_party span.border::after {
+    content: none;
+  }
+  section.tell_us .flex {
+    flex-wrap: wrap;
+  }
+  section.tell_us .item {
+    width: 100%;
+  }
+  section.tell_us .col-6:last-of-type {
+    order: 2;
+  }
+  section.tell_us h4 {
+    order: 1;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  section.roll_with_us {
+    margin-top: 45px;
+    -webkit-background-size: 0;
+    background-size: 0;
+    padding: 0;
+  }
+  section.roll_with_us h3 {
+    margin-bottom: 0;
+  }
+  section.roll_with_us h2 {
+    font-family: "Garamond";
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 30px;
+    line-height: normal;
+    color: #000;
+    letter-spacing: normal;
+  }
+  section.roll_with_us .background_mobile {
+    position: relative;
+    padding-top: 115px;
+    padding-bottom: 260px;
+  }
+  section.roll_with_us img {
+    max-width: 178px;
+    bottom: -40px;
+    top: auto;
+    right: -25px;
+  }
+  section.roll_with_us span.border {
+    border: 2px solid #fff;
+    border-right: none;
+    border-bottom: none;
+    top: 0;
+    bottom: 0;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+  }
+  section.roll_with_us span.border::before {
+    top: auto;
+    bottom: 0;
+    width: calc(100% - 130px);
+  }
+  section.roll_with_us span.border:after {
+    top: 0;
+    bottom: auto;
+    height: 74%;
+  }
+  section.roll_with_us form .check_terms {
+    display: flex;
+  }
+  section.roll_with_us form textarea {
+    height: 87px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  section.discover_city {
+    padding: 0;
+    padding-top: 100vh;
+    background-size: 0;
+  }
+  section.discover_city span.white-bg {
+    display: block;
+  }
+  section.discover_city .background_mobile {
+    height: 100vh;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    justify-content: center;
+    min-height: 320px;
+    max-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+  section.discover_city .background_mobile img {
+    display: block;
+    width: 249px;
+    max-width: 60%;
+  }
+  section.discover_city h1 {
+    font-size: 16px;
+    padding: 0 30px;
+    letter-spacing: 5px;
+    margin-bottom: 18px;
+  }
+  section.discover_city h3 {
+    font-size: 17px;
+    margin-bottom: 0;
+  }
+  section.discover_city form {
+    padding: 0 15px;
+  }
+  section.discover_city h2 {
+    padding: 0 15px;
+  }
+  section.menu_for_london {
+    padding: 40px 15px 0;
+  }
+  section.menu_for_london h3.section-label {
+    margin-bottom: 25px;
+  }
+  section.menu_for_london p.section-description {
+    margin-bottom: 35px;
+  }
+  section.menu_for_london .item {
+    height: 360px;
+    width: 100%;
+    margin: 0 0 15px;
+    padding: 30px;
+  }
+  section.menu_for_london .item h3 {
+    font-size: 20px;
+    letter-spacing: 10px;
+  }
+  section.join_team {
+    padding: 40px 15px 0;
+  }
+  section.join_team h3.section-label {
+    margin-bottom: 30px;
+  }
+  section.join_team .content h2 {
+    font-size: 20px;
+    line-height: normal;
+    letter-spacing: 10px;
+    padding: 0 30px;
+  }
+  section.join_team .background_mobile {
+    padding: 40px 0 40px;
+    min-height: 240px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+  }
+  section.tell_us {
+    padding: 50px 15px 0;
+  }
+  section.tell_us .item {
+    height: 323px;
+    padding: 30px;
+  }
+  section.tell_us .item img {
+    width: 241px;
+  }
+  section.tell_us .item h3 br {
+    display: none;
+  }
+  section.tell_us .item:last-of-type {
+    padding-bottom: 40px;
+  }
+  section.tell_us h4 {
+    font-size: 20px;
+  }
+  section.launch_party {
+    padding: 40px 15px 0;
+  }
+  section.launch_party .content p {
+    font-size: 18px;
+    line-height: normal;
+    padding: 0;
+  }
+  section.launch_party .content p br {
+    display: none;
+  }
+  section.roll_with_us {
+    padding: 0 15px;
+  }
+  section.roll_with_us .background_mobile {
+    overflow: hidden;
+  }
+  section.roll_with_us h2 {
+    font-size: 19px;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  section.discover_city .background_mobile {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  section.discover_city .background_mobile img {
+    width: 119px;
+  }
 }
 
 section.about-us-main-section {
@@ -3232,30 +3634,6 @@ footer .contact_info form button {
   .container {
     width: 994px;
   }
-  section.discover_city h1 {
-    padding: 0 50px;
-  }
-  section.discover_city {
-    padding: 106px 20px 99px;
-  }
-  section.discover_city h2 {
-    padding: 0 90px;
-  }
-  section.join_team form {
-    flex-wrap: wrap;
-    width: 570px;
-    margin: auto;
-  }
-  section.join_team form input {
-    margin-bottom: 15px;
-  }
-  section.join_team form button {
-    display: block;
-    margin-bottom: 15px;
-  }
-  section.join_team .content {
-    padding-bottom: 95px;
-  }
   section.londons_exclusive {
     padding: 100px 30px 100px;
   }
@@ -3268,42 +3646,9 @@ footer .contact_info form button {
   section.londons_exclusive form input {
     max-width: 530px;
   }
-  section.launch_party img {
-    max-width: 270px;
-  }
-  section.launch_party span.border::after {
-    height: 71%;
-  }
-  section.launch_party form button {
-    margin-left: 15px;
-  }
-  section.launch_party form input {
-    max-width: 150px;
-  }
-  section.launch_party form input.small {
-    max-width: 135px;
-  }
   section.follow_us .item {
     width: 135px;
     height: 135px;
-  }
-  section.roll_with_us h2 {
-    margin-bottom: 140px;
-  }
-  section.roll_with_us img {
-    max-width: 270px;
-  }
-  section.roll_with_us span.border::after {
-    height: 68%;
-  }
-  section.roll_with_us form button {
-    margin-left: 15px;
-  }
-  section.roll_with_us form input {
-    max-width: 150px;
-  }
-  section.roll_with_us form input.medium {
-    max-width: 150px;
   }
   footer .contact_info .payment_method {
     display: block;
@@ -3331,47 +3676,33 @@ footer .contact_info form button {
   header nav ul.main_menu li.menu_item {
     margin-left: 20px;
   }
-  section.discover_city {
-    padding: 0;
-    -webkit-background-size: 0;
-    background-size: 0;
-  }
-  section.discover_city h1 {
-    font-size: 25px;
-    padding: 0 10px;
-    letter-spacing: 15px;
-  }
-  section.discover_city h2 {
-    color: #000;
-    font-size: 19px;
-    padding: 0 50px;
-    margin-top: 20px;
-    margin-bottom: 23px;
-  }
-  section.discover_city h3 {
-    font-size: 20px;
-    margin-bottom: 0;
-  }
-  section.discover_city .scroll_down {
-    display: block;
-  }
-  section.discover_city .background_mobile {
-    padding: 100px 20px 100px;
-  }
-  section.discover_city form, section.join_team form, section.launch_party form, section.roll_with_us form {
+  section.discover_city form,
+  section.join_team form,
+  section.launch_party form,
+  section.roll_with_us form {
     flex-wrap: wrap;
     justify-content: flex-end;
     width: 100%;
     position: relative;
   }
-  section.discover_city form input, section.join_team form input, section.launch_party form input, section.roll_with_us form input, section.roll_with_us form textarea {
+  section.discover_city form input,
+  section.discover_city form textarea,
+  section.join_team form input,
+  section.join_team form textarea,
+  section.launch_party form input,
+  section.launch_party form textarea,
+  section.roll_with_us form input,
+  section.roll_with_us form textarea {
     max-width: 100% !important;
     margin: 0 auto 15px;
     border-color: #919191;
     border-width: 2px;
     height: 36px;
   }
-  section.discover_city form button, section.join_team form button, section.launch_party form button, section.roll_with_us form button {
+  section.discover_city form button,
+  section.join_team form button,
+  section.launch_party form button,
+  section.roll_with_us form button {
     height: 36px;
     border: 2px solid #919191;
     background-color: #e0e0e0;
@@ -3379,42 +3710,6 @@ footer .contact_info form button {
     margin: 0;
     padding: 0;
     min-width: 85px;
-  }
-  section.menu_for_london .item {
-    height: 540px;
-    width: 100%;
-  }
-  section.menu_for_london .item h3 {
-    font-size: 28px;
-  }
-  section.menu_for_london .flex {
-    flex-wrap: wrap;
-  }
-  section.join_team {
-    padding-top: 40px;
-  }
-  section.join_team .content {
-    -webkit-background-size: 0;
-    background-size: 0;
-    padding: 0;
-  }
-  section.join_team .background_mobile {
-    padding: 70px 0 95px;
-    position: relative;
-    margin-bottom: 30px;
-  }
-  section.join_team .content h2 {
-    font-size: 35px;
-    margin-bottom: 0;
-    line-height: 46px;
-    padding: 0 50px;
-  }
-  section.join_team .content h2 br {
-    display: none;
-  }
-  section.join_team span.border {
-    width: calc(100% - 12px);
-    height: calc(100% - 12px);
   }
   section.londons_exclusive {
     margin-top: 50px;
@@ -3470,75 +3765,6 @@ footer .contact_info form button {
     width: calc(100% - 12px);
     height: calc(100% - 12px);
   }
-  section.tell_us .flex {
-    flex-wrap: wrap;
-  }
-  section.tell_us .item {
-    width: 100%;
-  }
-  section.tell_us .col-6:last-of-type {
-    order: 2;
-  }
-  section.tell_us h4 {
-    order: 1;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  section.launch_party {
-    padding-top: 40px;
-  }
-  section.launch_party h3.section-label {
-    margin-bottom: 30px;
-  }
-  section.launch_party img {
-    display: none;
-  }
-  section.launch_party .content {
-    -webkit-background-size: 0;
-    background-size: 0;
-    padding: 0;
-  }
-  section.launch_party .content h2 {
-    padding: 0 30px;
-    font-size: 35px;
-    margin-bottom: 0;
-    line-height: 46px;
-    letter-spacing: 15px;
-  }
-  section.launch_party .content h2 br {
-    display: none;
-  }
-  section.launch_party .background_mobile {
-    position: relative;
-    padding-top: 140px;
-    padding-bottom: 30px;
-  }
-  section.launch_party span.border {
-    border: 2px solid #fff;
-    top: 0;
-    bottom: 0;
-    width: calc(100% - 12px);
-    height: calc(100% - 12px);
-  }
-  section.launch_party span.border::before, section.launch_party span.border:after {
-    content: none;
-  }
-  section.launch_party .content p {
-    font-size: 23px;
-    color: #000;
-    padding: 0px 30px;
-    margin-bottom: 22px;
-    margin-top: 22px;
-    text-align: center;
-  }
-  section.launch_party .content p a {
-    text-decoration: underline;
-    color: #000;
-    display: inline-block;
-  }
-  section.launch_party .content p br {
-    display: none;
-  }
   section.follow_us {
     padding-top: 40px;
   }
@@ -3558,60 +3784,6 @@ footer .contact_info form button {
   }
   section.follow_us p {
     margin-top: 0;
-  }
-  section.roll_with_us {
-    margin-top: 45px;
-    -webkit-background-size: 0;
-    background-size: 0;
-    padding: 0;
-  }
-  section.roll_with_us h3 {
-    margin-bottom: 0;
-  }
-  section.roll_with_us .background_mobile {
-    position: relative;
-    padding-top: 115px;
-    padding-bottom: 260px;
-  }
-  section.roll_with_us img {
-    max-width: 178px;
-    bottom: -40px;
-    top: auto;
-    right: -25px;
-  }
-  section.roll_with_us span.border {
-    border: 2px solid #fff;
-    border-right: none;
-    border-bottom: none;
-    top: 0;
-    bottom: 0;
-    width: calc(100% - 12px);
-    height: calc(100% - 12px);
-  }
-  section.roll_with_us span.border::before {
-    top: auto;
-    bottom: 0;
-    width: calc(100% - 130px);
-  }
-  section.roll_with_us span.border:after {
-    top: 0;
-    bottom: auto;
-    height: 74%;
-  }
-  section.roll_with_us h2 {
-    font-family: "Garamond";
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-size: 30px;
-    line-height: normal;
-    color: #000;
-    letter-spacing: normal;
-  }
-  section.roll_with_us form textarea {
-    height: 87px;
-  }
-  section.roll_with_us form .check_terms {
-    display: flex;
   }
   footer {
     flex-direction: column;
@@ -3633,13 +3805,13 @@ footer .contact_info form button {
     background-color: transparent;
     color: rgba(255, 255, 255, 0.75);
   }
+  footer .contact_info form input::placeholder {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
   footer .contact_info form button {
     max-width: 100%;
     width: 100%;
     margin-top: 15px;
-  }
-  footer .contact_info form input::placeholder {
-    color: rgba(255, 255, 255, 0.75) !important;
   }
   footer .contact_info .payment_method {
     display: inline-block;
@@ -3648,6 +3820,9 @@ footer .contact_info form button {
 }
 
 @media only screen and (max-width: 600px) {
+  body::before {
+    display: block;
+  }
   .container {
     width: 100%;
     padding: 0;
@@ -3695,6 +3870,10 @@ footer .contact_info form button {
   header nav.opened_menu {
     transform: translateX(0);
   }
+  header nav.opened_menu img.menu_logo {
+    transform: translateX(29px) translateY(43px);
+    opacity: 1;
+  }
   header nav img.menu_logo {
     display: block;
     position: absolute;
@@ -3706,10 +3885,6 @@ footer .contact_info form button {
     opacity: 0.4;
     transition: transform 0.2s ease, opacity 0.2s ease;
     transition-delay: 0.2s;
-  }
-  header nav.opened_menu img.menu_logo {
-    transform: translateX(29px) translateY(43px);
-    opacity: 1;
   }
   header nav ul.main_menu {
     flex-direction: column;
@@ -3730,12 +3905,12 @@ footer .contact_info form button {
     color: rgba(255, 255, 255, 0.85);
     line-height: 100%;
   }
+  header nav ul.main_menu li.menu_item a.open_dropdown.opened ~ ul {
+    height: auto;
+  }
   header nav ul.main_menu li.menu_item.dropdown:hover ul.dopdown_menu, header nav ul.main_menu li.menu_item.dropdown:hover i {
     margin-top: 0;
     transform: none;
-  }
-  header nav ul.main_menu li.menu_item a.open_dropdown.opened ~ ul {
-    height: auto;
   }
   header nav ul.main_menu li.menu_item.dropdown ul.dopdown_menu {
     position: relative;
@@ -3748,108 +3923,11 @@ footer .contact_info form button {
     transform: none;
     overflow: hidden;
   }
-  header nav ul.main_menu li.menu_item.dropdown ul.dopdown_menu li:first-child {
-    margin-top: 25px;
-  }
   header nav ul.main_menu li.menu_item.dropdown ul.dopdown_menu li {
     margin-bottom: 25px;
   }
-  section.discover_city {
-    padding: 0;
-    padding-top: 100vh;
-    background-size: 0;
-  }
-  section.discover_city span.white-bg {
-    display: block;
-  }
-  section.discover_city .background_mobile {
-    height: 100vh;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
-    padding: 0;
-    justify-content: center;
-    min-height: 320px;
-    max-height: 100vh;
-  }
-  section.discover_city .background_mobile {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-background-size: cover;
-    background-size: cover;
-    height: 100vh;
-  }
-  section.discover_city .background_mobile img {
-    display: block;
-    width: 249px;
-    max-width: 60%;
-  }
-  section.discover_city h1 {
-    font-size: 16px;
-    padding: 0 30px;
-    letter-spacing: 5px;
-    margin-bottom: 18px;
-  }
-  section.discover_city h3 {
-    font-size: 17px;
-    margin-bottom: 0;
-  }
-  section.discover_city form {
-    padding: 0 15px;
-  }
-  section.discover_city h2 {
-    padding: 0 15px;
-  }
-  section.menu_for_london {
-    padding: 40px 15px 0;
-  }
-  section.menu_for_london h3.section-label {
-    margin-bottom: 25px;
-  }
-  section.menu_for_london p.section-description {
-    margin-bottom: 35px;
-  }
-  section.menu_for_london .item {
-    height: 360px;
-    width: 100%;
-    margin: 0 0 15px;
-    padding: 30px;
-  }
-  section.menu_for_london .item h3 {
-    font-size: 20px;
-    letter-spacing: 10px;
-  }
-  section.join_team {
-    padding: 40px 15px 0;
-  }
-  section.join_team h3.section-label {
-    margin-bottom: 30px;
-  }
-  section.join_team .content h2 {
-    font-size: 20px;
-    line-height: normal;
-    letter-spacing: 10px;
-    padding: 0 30px;
-  }
-  section.join_team .background_mobile {
-    padding: 40px 0 40px;
-    min-height: 240px;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    align-items: center;
+  header nav ul.main_menu li.menu_item.dropdown ul.dopdown_menu li:first-child {
+    margin-top: 25px;
   }
   section.londons_exclusive {
     padding: 0 15px;
@@ -3878,40 +3956,11 @@ footer .contact_info form button {
   section.londons_exclusive p.terms {
     font-size: 16px;
   }
-  section.tell_us {
-    padding: 50px 15px 0;
-  }
-  section.tell_us .item {
-    height: 323px;
-    padding: 30px;
-  }
-  section.tell_us .item img {
-    width: 241px;
-  }
-  section.tell_us h4 {
-    font-size: 20px;
-  }
-  section.tell_us .item h3, section.launch_party .content h2 {
+  section.tell_us .item h3,
+  section.launch_party .content h2 {
     font-size: 20px;
     letter-spacing: 10px;
     line-height: normal;
-  }
-  section.tell_us .item h3 br {
-    display: none;
-  }
-  section.tell_us .item:last-of-type {
-    padding-bottom: 40px;
-  }
-  section.launch_party {
-    padding: 40px 15px 0;
-  }
-  section.launch_party .content p {
-    font-size: 18px;
-    line-height: normal;
-    padding: 0;
-  }
-  section.launch_party .content p br {
-    display: none;
   }
   section.follow_us {
     padding: 40px 15px 0;
@@ -3925,30 +3974,7 @@ footer .contact_info form button {
     height: 165px;
     margin: 0 7px 15px;
   }
-  section.roll_with_us {
-    padding: 0 15px;
-  }
-  section.roll_with_us .background_mobile {
-    overflow: hidden;
-  }
-  section.roll_with_us h2 {
-    font-size: 19px;
-    padding: 0;
-  }
   footer {
     margin: 70px 15px 15px;
-  }
-}
-
-@media only screen and (max-width: 420px) {
-  section.discover_city .background_mobile {
-    background-attachment: scroll;
-    background-position: center top;
-  }
-}
-
-@media only screen and (max-height: 500px) {
-  section.discover_city .background_mobile img {
-    width: 119px;
   }
 }

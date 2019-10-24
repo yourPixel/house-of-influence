@@ -19,6 +19,7 @@ body {
 	background-color: #fff;
 	&::before{
 		content: "";
+		display: none;
 		position: absolute;
 		width: 100%;
 		height: calc(100% - 100vh);
@@ -162,7 +163,6 @@ div.col-sm-6{
 }
 
 .main-loader {
-	//display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -837,10 +837,6 @@ section {
 		padding-top: 65px;
 		h3.section-label {
 			margin-bottom: 60px;
-		}
-		.row.flex {
-			//justify-content: space-between;
-			//margin: 0;
 		}
 		.item {
 			height: 165px;
