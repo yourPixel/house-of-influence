@@ -1,0 +1,117 @@
+<span class="header_bg">
+			<a href="#" class="logo">
+				<img src="/assets/img/logo_black.png" alt="header-logo">
+			</a>
+		</span>
+<div class="container">
+	<div class="row">
+		<a href="/" class="logo">
+			<img src="/assets/img/logo_black.png" alt="header-logo">
+		</a>
+		<div class="auth_button">
+			<a href="#" class="sign_in">Sign in</a>
+			<a href="#" class="join">Join</a>
+		</div>
+		
+		<button type="button" class="open_menu_btn">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+	</div>
+	<div class="row">
+		<nav>
+			<ul class="main_menu">
+				<li class="menu_item"><a href="/index.html">Home</a></li>
+				<li class="menu_item"><a href="/pages/about_us.html">About</a></li>
+				<li class="menu_item"><a href="/pages/collaborate.html">Collaborate</a></li>
+				<li class="menu_item dropdown">
+					<a class="open_dropdown">Register <i class="arrow_down"></i></a>
+					<ul class="dopdown_menu">
+						<li><a href="/pages/influencers.html">Influencers</a></li>
+						<li><a href="/pages/creatives.html">Creatives</a></li>
+						<li><a href="/pages/venues.html">Brands & Venues</a></li>
+						<li><a href="/pages/bia.html">British Influencer Awards</a></li>
+					</ul>
+				</li>
+				<li class="menu_item"><a href="/pages/contacts.html">Contact</a></li>
+			</ul>
+			<img src="/assets/img/white-logo.png" alt="logo" class="menu_logo">
+		</nav>
+	</div>
+</div>
+
+<div class="notification-item opened">
+	<div class="notification-container">
+		<h4>Thank you for registering to be selected for the House Of Influence launch party guest list</h4>
+		<p>The randomly selected registered individuals will be notified and sent their guest list tickets (with a Plus one) two weeks before the party. Good luck!</p>
+	</div>
+	<span class="close-notification" id="closeNotification">
+		<img src="/assets/img/close.png" alt="close-btn">
+	</span>
+</div>
+
+<script>
+	$("document").ready(function() {
+		$(window).scroll(function(e){
+			var body = e.target.body, scrollT = $(this).scrollTop();
+			if (body.clientWidth < 600) {
+				if (scrollT > 65) {
+					$('.header_bg').css({
+						'transform': "translateY(0)",
+						'opacity': '1'
+					});
+					$('.open_menu_btn').addClass('grey');
+				}else{
+					$('.header_bg').css({
+						'transform': `translateY(-65px)`,
+						'opacity': '1',
+					});
+					$('.open_menu_btn').removeClass('grey');
+				}
+			}
+		});
+		
+		$('.open_menu_btn').click(function(){
+			if ($('nav').hasClass('opened_menu')) {
+				$('nav, body').removeClass('opened_menu');
+				$(this).removeClass('opened_btn');
+			}else{
+				$('nav, body').addClass('opened_menu');
+				$(this).addClass('opened_btn');
+			}
+		});
+		
+		$('.open_dropdown').click(function(){
+			if ($(this).hasClass('opened')) {
+				$(this).removeClass('opened');
+			}else{
+				$(this).addClass('opened');
+			}
+		});
+		
+		var current = location.pathname.split("/").slice(-1)[0].replace(/^\/|\/$/g, '');
+		
+		function addActiveClass(element) {
+			if (element && element.attr('href')){
+				if (current === "" && element.attr('href').includes('index.html')){
+					element.addClass('active')
+				}
+				if (current !== "" && element.attr('href').includes(current)) {
+					element.addClass('active')
+				}
+			}
+		}
+		
+		$('.main_menu li a').each(function() {
+			var $this = $(this);
+			addActiveClass($this);
+		});
+		
+		// notifications
+		
+		$('#closeNotification').click(function () {
+			$(this).parent().removeClass('opened');
+		})
+	})
+</script>

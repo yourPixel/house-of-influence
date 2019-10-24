@@ -3,69 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Home</title>
-	<link rel="stylesheet" href="/assets/css/fonts.css">
-	<link rel="stylesheet" href="/assets/css/style.css">
-	<link rel="stylesheet" href="/assets/css/media.css">
+	<title>HOI | Home</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/assets/img/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	
+	<link rel="stylesheet" href="./assets/css/main.css">
 </head>
-<body>
+<body data-scroll="180" class="">
+
+	<!--  Notification item is in /partials/header.html line:44	-->
+
 	<div class="main-loader">
 		<div class="line"></div>
 		<div class="load-img"></div>
 	</div>
-	<header>
-		<span class="header_bg">
-			<a href="#" class="logo">
-				<img src="assets/img/logo_black.png" alt="header-logo">
-			</a>
-		</span>
-		<div class="container">
-			<div class="row">
-				<a href="#" class="logo">
-					<img src="assets/img/logo_black.png" alt="header-logo">
-				</a>
-				<div class="auth_button">
-					<a href="#" class="sign_in">Sign in</a>
-					<a href="#" class="join">Join</a>
-				</div>
-
-				<button type="button" class="open_menu_btn">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-			<div class="row">
-				<nav>
-					<ul class="main_menu">
-						<li class="menu_item"><a href="#" class="active">Home</a></li>
-						<li class="menu_item"><a href="#">About</a></li>
-						<li class="menu_item"><a href="#">Collaborate</a></li>
-						<li class="menu_item dropdown">
-							<a class="open_dropdown">Register <i class="arrow_down"></i></a>
-							<ul class="dopdown_menu">
-								<li><a href="#">Influencers</a></li>
-								<li><a href="#">Creatives</a></li>
-								<li><a href="#">Brands & Venues</a></li>
-								<li><a href="#">British Influencer Awards</a></li>
-							</ul>
-						</li>
-						<li class="menu_item"><a href="#">Contact</a></li>
-					</ul>
-					<img src="/assets/img/white-logo.png" alt="logo" class="menu_logo">
-				</nav>
-			</div>
-		</div>
-	</header>
+	
+	<header id="header"></header>
+	
 	<div class="container">
 		<main>
 			<section class="discover_city" style="background-image: url('/assets/img/home/bg.png');">
 				<!-- this background for mobile version -->
-				<div class="background_mobile" style="background-image: url('/assets/img/home/bg.png');">
-					<img src="/assets/img/white-logo-with-text.png" alt="white-logo">
+				<div class="background_mobile fixed-content" style="background-image: url('/assets/img/home/bg.png');">
+					<img src="/assets/img/white-logo-with-text.png" alt="white-logo" data-initialw="249" data-expectedw="119" class="animated-img">
 					<h1>Discover the city Discover the influential</h1>
 					<h3>Coming soon</h3>
 				</div>
+				<span class="white-bg"></span>
 
 				<h2>London's hidden luxuries revealed and reviewed by a new digital generation of influencers</h2>
 
@@ -89,16 +68,20 @@
 
 			<section class="menu_for_london" id="menu_for_london">
 				<h3 class="section-label">The menu for London</h3>
-				<p>Welcome to HOI. Where the glamorous side of our favourite city is revealed and reviewed for our, not so ordinary readers. From divine dining and cocktail collections, to dazzling designers, and eclectic experiences, HOI collaborates with some of the most exciting brands, venues and influencers, to bring to you a curated menu for London. <a href="#">Read more</a></p>
+				<p class="section-description">Welcome to HOI. Where the glamorous side of our favourite city is revealed and reviewed for our, not so ordinary readers. From divine dining and cocktail collections, to dazzling designers, and eclectic experiences, HOI collaborates with some of the most exciting brands, venues and influencers, to bring to you a curated menu for London. <a href="#">Read more</a></p>
 
 				<div class="row flex">
-					<div class="item" style="background-image: url(/assets/img/home/london-menu-1.png); background-position: top;">
-						<span class="border"></span>
-						<h3>Apply to bean Influencer Partner for features and collaborations</h3>
+					<div class="col-6 grid-margin">
+						<div class="item" style="background-image: url(/assets/img/home/london-menu-1.png); background-position: top;">
+							<span class="border"></span>
+							<h3>Apply to bean Influencer Partner for features and collaborations</h3>
+						</div>
 					</div>
-					<div class="item" style="background-image: url(/assets/img/home/london-menu-2.png);">
-						<span class="border"></span>
-						<h3>Join our <br> lux-list of brands and venues</h3>
+					<div class="col-6">
+						<div class="item" style="background-image: url(/assets/img/home/london-menu-2.png);">
+							<span class="border"></span>
+							<h3>Join our <br> lux-list of brands and venues</h3>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -140,14 +123,19 @@
 
 			<section class="tell_us">
 				<div class="row flex">
-					<div class="item" style="background-image: url(/assets/img/home/tell-us-1.png);">
-						<span class="border"></span>
-						<img src="/assets/img/home/bia2020.png" alt="BIA-2020">
+					<div class="col-6">
+						<div class="item" style="background-image: url(/assets/img/home/tell-us-1.png);">
+							<span class="border"></span>
+							<img src="/assets/img/home/bia2020.png" alt="BIA-2020">
+						</div>
 					</div>
-					<div class="item" style="background-image: url(/assets/img/home/tell-us-2.png);">
-						<span class="border"></span>
-						<h3>Favourite <br> influencer? <br> tell us who...</h3>
+					<div class="col-6">
+						<div class="item" style="background-image: url(/assets/img/home/tell-us-2.png);">
+							<span class="border"></span>
+							<h3>Favourite <br> influencer? <br> tell us who...</h3>
+						</div>
 					</div>
+					
 
 					<h4>British Influencer Awards 2020 <a href="#">Registration is now open</a></h4>
 				</div>
@@ -208,7 +196,7 @@
 							</div>
 							<label for="terms">
 								<a href="#">terms and conditions</a> <br>
-								and 
+								and
 								<a href="#"> privacy policy</a>.
 							</label>
 						</div>
@@ -218,50 +206,11 @@
 				</section>
 			</main>
 
-			<footer>
-				<span class="border"></span>
-				<div class="contact_info">
-					<span class="title">HOI Contact Info:</span>
-					<p>
-						20 Conway Road <br>
-						Richmond-Upon-Thames <br>
-						TW4 5LR <br>
-						Tel: 0208 274 1128
-					</p>
-					<div class="socials">
-						<a href="#"><img src="/assets/img/socials/pinterest.png" alt="pinterest"></a>
-						<a href="#"><img src="/assets/img/socials/instagram-white.png" alt="instagram"></a>
-						<a href="#"><img src="/assets/img/socials/facebook.png" alt="facebook"></a>
-						<a href="#"><img src="/assets/img/socials/youtube.png" alt="youtube"></a>
-					</div>
-					<p>Secure payments via <a href="#">STRIPE</a></p>
-					<p>Payment types: Visa, MasterCard, Paypal  
-						<span class="payment_method">
-							<img class="payment" src="/assets/img/socials/visa.png" alt="visa">
-							<img class="payment" src="/assets/img/socials/master-card.png" alt="master-card">
-							<img class="payment" src="/assets/img/socials/paypal.png" alt="paypal">
-						</span>
-					</p>
-				</div>
-				<div class="contact_info">
-					<img src="/assets/img/socials/drinkaware-logo.png" alt="drinkaware-logo">
-					<p>HOI supports the responsible <br> consumption of alcohol</p>
-					<p class="space">
-						<span class="title">Work with us: </span>  
-						<a href="#" class="work-with-us">Blogers</a>  
-						<a href="#" class="work-with-us">Influencer</a> 
-						<a href="#" class="work-with-us">Partners</a>
-					</p>
-					<p class="space">Our <a href="#">terms & conditions</a> and <a href="#">privacy policy</a></p>
-					<form action="">
-						<input type="email" name="" placeholder="Email address" required>
-						<button type="submit">Submit</button>
-					</form>
-				</div>
-			</footer>
+			<footer id="footer"></footer>
 		</div>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript" src="/assets/js/scripts.js"></script>
-	</body>
-	</html>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--	<script type="text/javascript" src="/assets/js/smoothScroll.js"></script>-->
+	<script type="text/javascript" src="/assets/js/scripts.js"></script>
+</body>
+</html>

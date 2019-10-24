@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>HOI | Influencers registration</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/assets/img/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	
+	<link rel="stylesheet" href="../assets/css/main.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body class="influencers-page" data-scroll="300">
+<div class="main-loader">
+	<div class="line"></div>
+	<div class="load-img"></div>
+</div>
+<header id="header"></header>
+<div class="container">
+	<main>
+		<section class="influencers-main-section" style="background-image: url('/assets/img/influencers/bg.png');">
+			<!-- this background for mobile version -->
+			<div class="background_mobile fixed-content" style="background-image: url('/assets/img/influencers/bg-mobile.png');">
+				<h2>influencers</h2>
+			</div>
+		</section>
+		
+		<section class="registration-form influencers-reg-form">
+			<h3 class="section-label">registration & applications</h3>
+			<form action="" class="collect-info-form">
+				<div class="row flex">
+					<div class="col-6"><input class="grey" type="text" placeholder="*Name" name="" required/></div>
+					<div class="col-6"><input class="grey" type="text" placeholder="*Surname" name="" required/></div>
+					<div class="col-6"><input class="grey" type="text" placeholder="Instagram Handle" name="" /></div>
+					<div class="col-6"><input class="grey" type="email" placeholder="*Email" name="" required/></div>
+				</div>
+				
+				<h4>*I am interested in...</h4>
+				<p>please select up to 3 collaboration options</p>
+				
+				<div class="grid">
+					<div class="grid-sizer"></div>
+					
+					<div class="grid-item h_250" style="order: 1;">
+						<div class="item _1" style="background-image:url('/assets/img/influencers/influencers-1.png');">
+							<input type="checkbox" name="" data-value="Travel and experiences">
+							<span class="code">1</span>
+							<h4>Travel <br>
+								and <br>
+								experiences</h4>
+						</div>
+					</div>
+					<div class="grid-item h_250" style="order: 2;">
+						<div class="item _2" style="background-image:url('/assets/img/influencers/influencers-2.png');">
+							<input type="checkbox" name="" data-value="Inspiration and new thinking">
+							<span class="code"></span>
+							<h4> <span>inspiration</span>
+								<span>and</span>
+								<span>new</span>
+								<span>thinking</span>
+							</h4>
+						</div>
+					</div>
+					<div class="grid-item h_480" style="order: 3;">
+						<div class="item _3" style="background-image:url('/assets/img/influencers/influencers-3.png');">
+							<input type="checkbox" name="" data-value="Food and drink">
+							<span class="code"></span>
+							<h4>
+								<span>Food</span>
+								<span>and</span>
+								<span>drink</span>
+							</h4>
+						</div>
+					</div>
+					
+					
+					<div class="grid-item h_460" style="order: 4;">
+						<div class="item _4" style="background-image:url('/assets/img/influencers/influencers-4.png');">
+							<input type="checkbox" name="" data-value="Sustainability and ethics">
+							<span class="code"></span>
+							<h4>
+								sustainability <br>
+								and <br>
+								ethics
+							</h4>
+						</div>
+					</div>
+					<div class="grid-item h_250" style="order: 5;">
+						<div class="item _5" style="background-image:url('/assets/img/influencers/influencers-5.png');">
+							<input type="checkbox" name="" data-value="mindful wellness">
+							<span class="code"></span>
+							<h4>mindful <br>
+								wellness</h4>
+						</div>
+					</div>
+					<div class="grid-item h_280" style="order: 6;">
+						<div class="item _6" style="background-image:url('/assets/img/influencers/influencers-6.png');">
+							<input type="checkbox" name="" data-value="mums bumps and babies">
+							<span class="code"></span>
+							<h4>
+								<span>mums</span>
+								<span>bumps</span>
+								<span>and</span>
+								<span>babies</span>
+							</h4>
+						</div>
+					</div>
+					
+					
+					<div class="grid-item h_300" style="order: 8;">
+						<div class="item _7" style="background-image:url('/assets/img/influencers/influencers-7.png');">
+							<input type="checkbox" name="" data-value="fashion and style">
+							<span class="code"></span>
+							<h4>
+								fashion and <br>
+								style
+							</h4>
+						</div>
+					</div>
+					<div class="grid-item h_230" style="order: 7;">
+						<div class="item _8" style="background-image:url('/assets/img/influencers/influencers-8.png');">
+							<input type="checkbox" name="" data-value="art design creativity">
+							<span class="code"></span>
+							<h4>
+								art <br>
+								design <br>
+								creativity
+							</h4>
+						</div>
+					</div>
+					<div class="grid-item h_290" style="order: 11;">
+						<div class="item _9" style="background-image:url('/assets/img/influencers/influencers-9.png');">
+							<input type="checkbox" name="" data-value="music and entertainement">
+							<span class="code"></span>
+							<h4>music <br>
+								and <br>
+								entertainement</h4>
+						</div>
+					</div>
+					
+					
+					<div class="grid-item h_250" style="order: 10;">
+						<div class="item _10" style="background-image:url('/assets/img/influencers/influencers-10.png');">
+							<input type="checkbox" name="" data-value="health and fitness">
+							<span class="code"></span>
+							<h4>
+								<span>health</span>
+								<span>and</span>
+								<span>fitness</span>
+							</h4>
+						</div>
+					</div>
+					<div class="grid-item h_480" style="order: 9;">
+						<div class="item _11" style="background-image:url('/assets/img/influencers/influencers-11.png');">
+							<input type="checkbox" name="" data-value="pets and animals">
+							<span class="code"></span>
+							<h4>
+								<span>pets</span>
+								<span>and</span>
+								<span>animals</span>
+							</h4>
+						</div>
+					</div>
+					<div class="grid-item h_580" style="order: 14;">
+						<div class="item _12" style="background-image:url('/assets/img/influencers/influencers-12.png');">
+							<input type="checkbox" name="" data-value="home and interiors">
+							<span class="code"></span>
+							<h4>
+								<span>home</span>
+								<span>and</span>
+								<span>interiors</span>
+							</h4>
+						</div>
+					</div>
+					
+					
+					<div class="grid-item h_270" style="order: 13;">
+						<div class="item _13" style="background-image:url('/assets/img/influencers/influencers-13.png');">
+							<input type="checkbox" name="" data-value="gaming and e–sports">
+							<span class="code"></span>
+							<h4>
+								gaming <br>
+								and <br>
+								e–sports
+							</h4>
+						</div>
+					</div>
+					<div class="grid-item h_250" style="order: 15;">
+						<div class="item _14" style="background-image:url('/assets/img/influencers/influencers-14.png');">
+							<input type="checkbox" name="" data-value="fun and humour">
+							<span class="code"></span>
+							<h4>
+								<span>fun</span>
+								<span>and humour</span>
+							</h4>
+						</div>
+					</div>
+					<div class="grid-item h_480" style="order: 12;">
+						<div class="item _15" style="background-image:url('/assets/img/influencers/influencers-15.png');">
+							<input type="checkbox" name="" data-value="charity and ngo">
+							<span class="code"></span>
+							<h4>charity <br>
+								and <br>
+								ngo</h4>
+						</div>
+					</div>
+					
+					
+					<div class="grid-item h_270" style="order: 17;">
+						<div class="item _16" style="background-image:url('/assets/img/influencers/influencers-16.png');">
+							<input type="checkbox" name="" data-value="tech and innovation">
+							<span class="code"></span>
+							<h4>
+								tech <br>
+								and <br>
+								innovation
+							</h4>
+						</div>
+					</div>
+					<div class="grid-item h_270" style="order: 16;">
+						<div class="item _17" style="background-image:url('/assets/img/influencers/influencers-17.png');">
+							<input type="checkbox" name="" data-value="entrepreneurship and business">
+							<span class="code"></span>
+							<h4>
+								entrepreneurship <br>
+								and business
+							</h4>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="row flex m-top">
+					<div class="col md">
+						<input class="grey" type="text" name="" placeholder="*City of resonance" required>
+					</div>
+					<div class="col sm">
+						<input class="grey" type="text" name="" placeholder="*Date of birth" required id="dateOfB">
+					</div>
+					<div class="col md">
+						<input class="grey" type="text" name="" placeholder="*Number of Followers" required>
+					</div>
+					<div class="col sm">
+						<input class="grey" type="text" name="" placeholder="*Phone" required>
+					</div>
+					
+					<div class="col md">
+						<label for="providedServices" class="select-options">
+							<select class="grey" name="" id="providedServices" required>
+								<option hidden selected disabled>*I'm happy to travel for brand collaborations, paid work, shoots and creative content?</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+							</select>
+							<span class="arrow"></span>
+						</label>
+					</div>
+					<div class="col sm">
+						<label for="invitationCode" class="select-options">
+							<select class="grey" name="" id="invitationCode" required>
+								<option hidden selected disabled>*I have an invitation code</option>
+								<option value="yes">Yes</option>
+								<option value="no">No</option>
+							</select>
+							<span class="arrow"></span>
+						</label>
+					</div>
+					<div class="col">
+						<label for="areaOfSpecialism" class="select-options">
+							<select class="grey" name="" id="areaOfSpecialism" required>
+								<option hidden selected disabled>*I’m in contract with other agents / brands / third parties?</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+							</select>
+							<span class="arrow"></span>
+						</label>
+					</div>
+					
+					<div class="col">
+						<input class="grey" type="text" name="" placeholder="If yes please give details [company or agent name].">
+					</div>
+					
+					<div class="col">
+						<label for="collaborationsOpportunities" class="select-options">
+							<select class="grey" name="" id="collaborationsOpportunities" required>
+								<option hidden selected disabled>*Please select what collaborations opportunities you are interested in.</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+							</select>
+							<span class="arrow"></span>
+						</label>
+					</div>
+					
+					<div class="col justify-center">
+						<div class="check_terms">
+							<div class="checkbox">
+								<input type="checkbox" id="terms" required>
+								<span class="check"></span>
+							</div>
+							<label for="terms">
+								<span>Our</span> <a href="#">terms and conditions</a> and <a href="#"> privacy policy</a> <span>for your data protections</span>
+							</label>
+						</div>
+						<button type="submit" class="grey">Submit</button>
+					</div>
+				</div>
+			</form>
+		</section>
+		
+		<section class="londons_exclusive" style="background-image: url(/assets/img/home/londons-exclusive.png);">
+			<div class="background_mobile" style="background-image: url('/assets/img/home/londons-exclusive.png');">
+				<span class="border"></span>
+				<h3>London’s exclusive lux promos, tickets, invitations and gifts, all in one monthly email</h3>
+			</div>
+			
+			<p>The HOI monthly members email provides our readers with the latest <br>
+				launches, openings, dining experiences, exclusive events and lux-lifestyle promotions. </p>
+			<form action="">
+				<input type="email" name="" placeholder="Email address" required>
+				<button type="submit">Join</button>
+			</form>
+			<p class="terms">By entering your email address you agree to our <a href="#">terms and conditions</a> and <a href="#">privacy policy</a>.</p>
+		</section>
+		
+		<section class="follow_us">
+			<h3 class="section-label">follow us on instagram</h3>
+			
+			<div class="row flex">
+				<div class="item" style="background-image: url(/assets/img/follow/follow-1.png);"></div>
+				<div class="item" style="background-image: url(/assets/img/follow/follow-2.png);"></div>
+				<div class="item" style="background-image: url(/assets/img/follow/follow-3.png);"></div>
+				<div class="item" style="background-image: url(/assets/img/follow/follow-4.png);"></div>
+				<div class="item" style="background-image: url(/assets/img/follow/follow-5.png);"></div>
+				<div class="item" style="background-image: url(/assets/img/follow/follow-6.png);"></div>
+			</div>
+			
+			<p>Follow Us <a href="#"><img src="/assets/img/socials/instagram-grey.png" alt="instagram"></a></p>
+		</section>
+	</main>
+	
+	<footer id="footer"></footer>
+</div>
+
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="/assets/js/scripts.js"></script>
+
+<script>
+	$(document).ready(function () {
+		var isActive;
+		enableDisableMasonry($(window).width());
+		$(window).resize(function(){
+			var width = $(this)[0].innerWidth;
+			enableDisableMasonry(width);
+		});
+		
+		function enableDisableMasonry(width){
+			if (width < 1025 && isActive){
+				$('.grid').masonry('destroy');
+				isActive = false;
+			}else if (width > 1024) {
+				$('.grid').masonry({
+					itemSelector: '.grid-item',
+					columnWidth: '.grid-sizer'
+				});
+				isActive = true;
+			}
+		}
+		
+		$('#dateOfB').mask("99/99/9999", {placeholder: 'dd/mm/yyyy' });
+	})
+</script>
+</body>
+</html>

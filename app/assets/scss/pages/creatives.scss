@@ -1,0 +1,167 @@
+section {
+	&.registration-main-section {
+		min-height: 530px;
+		@include bg(center);
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		h2 {
+			@include font(25px, 400, 'AceSans');
+			color: #fff;
+			text-align: center;
+			letter-spacing: 10px;
+			padding: 0 40px;
+		}
+	}
+
+	&.registration-form {
+		padding: 45px 0 0;
+
+		.m-top {
+			margin-top: 50px;
+		}
+
+		h3.section-label {
+			margin-bottom: 45px;
+		}
+
+		h4 {
+			@include font(23px, 400, 'Garamond');
+			color: #151515;
+			text-align: center;
+			line-height: normal;
+			margin-top: 2px;
+		}
+
+		p {
+			@include font(16px, 400, 'Garamond');
+			color: #151515;
+			opacity: 0.63;
+			text-align: center;
+			line-height: 23px;
+			margin-bottom: 30px;
+		}
+
+		.feature-block {
+			width: 100%;
+			min-height: 245px;
+		}
+	}
+}
+
+.venues-page{
+	section{
+		&.registration-form{
+			.m-top {
+				margin-top: 45px;
+			}
+			form{
+				.check_terms{
+					margin-top: 0;
+				}
+				button{
+					margin-top: 0;
+				}
+			}
+			@media only screen and (max-width: 1024px){
+				.m-top {
+					margin-top: 30px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	section {
+		&.registration-main-section {
+			padding: 135px 0 135px 0;
+			align-items: center;
+			justify-content: center;
+			min-height: auto;
+
+			.background_mobile {
+				background-size: 0;
+			}
+			h2{
+				padding: 0;
+			}
+		}
+
+		&.registration-form {
+			padding-top: 38px;
+			h3.section-label {
+				margin-bottom: 30px;
+			}
+
+			h4{
+				margin-top: 10px;
+			}
+
+			p {
+				margin-bottom: 25px;
+			}
+
+			.m-top {
+				margin-top: 35px;
+			}
+
+			.col {
+				&.justify-center{
+					justify-content: space-between;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	section {
+		h5.item-label {
+			font-size: 20px;
+			letter-spacing: 9px;
+		}
+
+		&.registration-main-section {
+			padding: 0;
+			background-size: 0;
+			height: 100vh;
+			z-index: 2;
+
+			.background_mobile {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flex;
+				display: -o-flex;
+				display: flex;
+				align-items: flex-start;
+				justify-content: center;
+				z-index: -1;
+				@include bg(center);
+				padding: 185px 15px 150px;
+				height: 100vh;
+			}
+			h2 {
+				font-size: 20px;
+			}
+		}
+
+		&.registration-form {
+			padding-right: 15px;
+			padding-left: 15px;
+
+			.feature-block {
+				min-height: 150px;
+			}
+		}
+	}
+}

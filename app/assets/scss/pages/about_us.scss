@@ -1,0 +1,237 @@
+section {
+	&.about-us-main-section {
+		padding: 0 0 175px 200px;
+		position: relative;
+		min-height: 480px;
+		@include bg(center, cover);
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-start;
+
+		h3 {
+			@include font(25px, 700, "Brandon");
+			color: #ffffff;
+			text-transform: uppercase;
+		}
+
+		img {
+			position: absolute;
+			right: 75px;
+			bottom: -115px;
+			width: 514px;
+		}
+	}
+
+	&.lux_lovers {
+		padding: 40px 0 0;
+
+		h3.section-label {
+			margin-bottom: 40px;
+		}
+
+		p.section-description {
+			margin-bottom: 40px;
+		}
+
+		h4 {
+			text-align: center;
+			@include font(25px, 700, "Brandon");
+			color: #000;
+			text-transform: uppercase;
+			margin-bottom: 50px;
+		}
+
+		.feature-block {
+			width: 100%;
+			min-height: 175px;
+			margin-bottom: 30px;
+		}
+	}
+
+	&.influental-people {
+		padding-top: 70px;
+
+		h3.section-label {
+			text-align: left;
+			margin-bottom: 43px;
+		}
+
+		p.section-description {
+			text-align: left;
+			padding: 0;
+			padding-right: 50px;
+		}
+
+		.item {
+			position: relative;
+			height: 100%;
+			min-height: 525px;
+			@include bg(center);
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-start;
+			padding: 60px 37px;
+
+			h3 {
+				@include font(45px, 400, "AceSans");
+				color: #ffffff;
+				line-height: 60px;
+				letter-spacing: 20px;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width:1230px){
+	section{
+		&.about-us-main-section{
+			padding: 0 0 175px 100px;
+			img {
+				width: 414px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	section {
+		&.about-us-main-section {
+			padding: 200px 0 300px 0;
+			align-items: center;
+			justify-content: center;
+
+			.background_mobile {
+				background-size: 0;
+			}
+
+			img {
+				right: -40px;
+				bottom: -50px;
+				width: 250px;
+			}
+		}
+
+		&.influental-people {
+			.row {
+				flex-direction: column-reverse;
+			}
+
+			h3.section-label {
+				margin-bottom: 30px;
+			}
+
+			p.section-description {
+				padding: 0;
+			}
+
+			.col-6:last-child {
+				margin-bottom: 25px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	section {
+		h5.item-label {
+			font-size: 20px;
+			letter-spacing: 9px;
+		}
+
+		&.about-us-main-section {
+			padding: 0;
+			background-size: 0;
+			height: 100vh;
+			z-index: 2;
+
+			.background_mobile {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flex;
+				display: -o-flex;
+				display: flex;
+				align-items: flex-start;
+				justify-content: center;
+				z-index: -1;
+				@include bg(initial);
+				padding: 210px 8px 150px;
+				height: 100vh;
+			}
+			h3 {
+				position: relative;
+				text-align: center;
+				font-size: 17px;
+				display: inline-block;
+			}
+
+			img {
+				position: relative;
+				display: inline-block;
+				width: 200px;
+				right: 0;
+				margin-left: 20px;
+				bottom: 45px;
+			}
+		}
+
+		&.lux_lovers {
+			padding: 40px 15px 0;
+
+			h3.section-label {
+				margin-bottom: 30px;
+			}
+
+			p.section-description {
+				margin-bottom: 30px;
+			}
+
+			h4 {
+				font-size: 17px;
+				margin-bottom: 35px;
+			}
+
+			.feature-block {
+				min-height: 110px;
+				margin-bottom: 15px;
+			}
+		}
+
+		&.influental-people {
+			padding: 50px 15px 0;
+
+			h3.section-label {
+				margin-bottom: 30px;
+			}
+
+			//p.section-description{
+			//	margin-bottom: 30px;
+			//}
+			.item {
+				min-height: 430px;
+
+				h3 {
+					font-size: 28px;
+					letter-spacing: 10px;
+					line-height: 40px;
+				}
+			}
+		}
+	}
+}
+
+.about-us-page section.londons_exclusive {
+	margin-top: 40px;
+}
