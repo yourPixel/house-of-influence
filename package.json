@@ -17,6 +17,6 @@
     "node-notifier": "^5.0.2"
   },
   "dependencies": {
-    "serve": "^11.2.0"
+    "serve": "11.0.0"
   }
 }

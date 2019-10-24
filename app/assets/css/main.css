@@ -2885,8 +2885,8 @@ section.influencers-reg-form .grid .grid-item .item {
   z-index: 2;
 }
 
-section.influencers-reg-form .grid .grid-item .item.selected::before {
-  opacity: 0;
+section.influencers-reg-form .grid .grid-item .item:hover::before, section.influencers-reg-form .grid .grid-item .item.selected::before {
+  opacity: 1;
 }
 
 section.influencers-reg-form .grid .grid-item .item input {
@@ -2938,8 +2938,6 @@ section.influencers-reg-form .grid .grid-item .item span.code {
   z-index: -1;
   top: 0;
   right: 0;
-  width: 100%;
-  height: 100%;
   line-height: 62px;
   padding-right: 27px;
   padding-top: 22px;
@@ -2950,7 +2948,6 @@ section.influencers-reg-form .grid .grid-item .item span.code {
   font-weight: bold;
   font-family: "Dinpro";
   text-align: right;
-  background-color: rgba(0, 0, 0, 0.6);
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -3345,6 +3342,15 @@ section.influencers-reg-form .grid .h_580 {
   section.influencers-reg-form .grid .grid-sizer,
   section.influencers-reg-form .grid .grid-item {
     width: 100%;
+  }
+  section.influencers-reg-form .grid .grid-item .item:visited, section.influencers-reg-form .grid .grid-item .item:focus, section.influencers-reg-form .grid .grid-item .item:active, section.influencers-reg-form .grid .grid-item .item:focus-within {
+    outline: none;
+  }
+  section.influencers-reg-form .grid .grid-item .item:visited::before, section.influencers-reg-form .grid .grid-item .item:focus::before, section.influencers-reg-form .grid .grid-item .item:active::before, section.influencers-reg-form .grid .grid-item .item:focus-within::before {
+    opacity: 0;
+  }
+  section.influencers-reg-form .grid .grid-item .item.selected::before {
+    opacity: 1;
   }
 }
 
