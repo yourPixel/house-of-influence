@@ -16,5 +16,7 @@
     "gulp-sass": "^4.0.2",
     "node-notifier": "^5.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "serve": "^11.2.0"
+  }
 }
