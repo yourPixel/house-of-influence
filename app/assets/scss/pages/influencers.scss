@@ -37,9 +37,9 @@ section{
 					width: 100%;
 					height: 100%;
 					z-index: 2;
-					&.selected{
+					&:hover, &.selected{
 						&::before{
-							opacity: 0;
+							opacity: 1;
 						}
 					}
 					input{
@@ -49,7 +49,6 @@ section{
 						top: 0;
 						left: 0;
 						opacity: 0;
-						//visibility: hidden;
 						&:checked ~ span{
 							opacity: 1;
 						}
@@ -87,8 +86,6 @@ section{
 						z-index: -1;
 						top: 0;
 						right: 0;
-						width: 100%;
-						height: 100%;
 						line-height: 62px;
 						padding-right: 27px;
 						padding-top: 22px;
@@ -97,7 +94,6 @@ section{
 						opacity: 0;
 						@include font(90px, bold, "Dinpro");
 						text-align: right;
-						background-color: rgba(0, 0, 0, 0.6);
 						transition: opacity 0.3s ease-in-out;
 					}
 					&._1 {
@@ -433,6 +429,21 @@ section{
 				.grid-sizer,
 				.grid-item {
 					width: 100%;
+				}
+				.grid-item{
+					.item{
+						&:visited, &:focus, &:active, &:focus-within{
+							outline: none;
+							&::before{
+								opacity: 0;
+							}
+						}
+						&.selected{
+							&::before{
+								opacity: 1;
+							}
+						}
+					}
 				}
 			}
 		}
